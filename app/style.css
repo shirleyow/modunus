@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  padding: 20px 0 10px 20px;
+}
+
+.box {
+  float:left;
+  padding: 20px;
+}
+
+.mat-sidenav {
+  position: left;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.filter {
+  width: 250px;
+  padding: 10px;
+  border: 5px;
+  margin: 0px;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0;
+  background-color: rgb(224, 223, 223);
+  overflow-x: hidden;
+}
+
+dir-pagination-controls {
+  text-align: center;
+}
