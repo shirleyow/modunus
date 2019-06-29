@@ -17,7 +17,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -49,7 +49,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -86,7 +86,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -116,7 +116,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -146,7 +146,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -178,7 +178,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -218,7 +218,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -250,7 +250,7 @@ myApp.factory('Modules', function () {
                 4,
                 2
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -282,7 +282,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -312,7 +312,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -342,7 +342,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -374,7 +374,7 @@ myApp.factory('Modules', function () {
                 5,
                 3
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": false,
@@ -407,7 +407,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -439,7 +439,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -469,7 +469,7 @@ myApp.factory('Modules', function () {
                 1,
                 2
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -501,7 +501,7 @@ myApp.factory('Modules', function () {
                 1,
                 2
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -538,7 +538,7 @@ myApp.factory('Modules', function () {
                 1,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -570,7 +570,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -600,7 +600,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -630,7 +630,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -660,7 +660,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -697,7 +697,7 @@ myApp.factory('Modules', function () {
                 0,
                 6
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -727,7 +727,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -757,7 +757,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -790,7 +790,7 @@ myApp.factory('Modules', function () {
                 3,
                 3
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -827,7 +827,7 @@ myApp.factory('Modules', function () {
                 5,
                 2
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -857,7 +857,7 @@ myApp.factory('Modules', function () {
                 3,
                 3
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -889,7 +889,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -921,7 +921,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -953,7 +953,7 @@ myApp.factory('Modules', function () {
                 3,
                 3
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -986,7 +986,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -1019,7 +1019,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1051,7 +1051,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1083,7 +1083,7 @@ myApp.factory('Modules', function () {
                 4,
                 3
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -1115,7 +1115,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -1147,7 +1147,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1179,7 +1179,7 @@ myApp.factory('Modules', function () {
                 4,
                 3
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -1211,7 +1211,7 @@ myApp.factory('Modules', function () {
                 1,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": false,
@@ -1242,7 +1242,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -1272,7 +1272,7 @@ myApp.factory('Modules', function () {
                 4,
                 4
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1304,7 +1304,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1340,7 +1340,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -1371,7 +1371,7 @@ myApp.factory('Modules', function () {
                 5,
                 2
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1400,7 +1400,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -1431,7 +1431,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -1462,7 +1462,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1491,7 +1491,7 @@ myApp.factory('Modules', function () {
                 4,
                 3
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1520,7 +1520,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -1549,7 +1549,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1580,7 +1580,7 @@ myApp.factory('Modules', function () {
                 1,
                 6
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1611,7 +1611,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1640,7 +1640,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -1671,7 +1671,7 @@ myApp.factory('Modules', function () {
                 4,
                 3
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -1702,7 +1702,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1732,7 +1732,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -1769,7 +1769,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1799,7 +1799,7 @@ myApp.factory('Modules', function () {
             "department": "Geography",
             "faculty": "Arts and Social Science",
             "pillar": "GES",
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1839,7 +1839,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -1871,7 +1871,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1904,7 +1904,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -1936,7 +1936,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -1973,7 +1973,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -2010,7 +2010,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -2042,7 +2042,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -2077,7 +2077,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -2109,7 +2109,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -2146,7 +2146,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": false,
             "tutorials": false,
@@ -2176,7 +2176,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -2208,7 +2208,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -2245,7 +2245,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": false,
@@ -2275,7 +2275,7 @@ myApp.factory('Modules', function () {
                 4,
                 3
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": false,
@@ -2307,7 +2307,7 @@ myApp.factory('Modules', function () {
                 4,
                 3
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -2339,7 +2339,7 @@ myApp.factory('Modules', function () {
                 2,
                 4
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -2372,7 +2372,7 @@ myApp.factory('Modules', function () {
                 4,
                 3
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": false,
@@ -2409,7 +2409,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -2439,7 +2439,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -2471,7 +2471,7 @@ myApp.factory('Modules', function () {
                 3,
                 3
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -2503,7 +2503,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -2535,7 +2535,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -2572,7 +2572,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -2602,7 +2602,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -2638,7 +2638,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -2674,7 +2674,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -2705,7 +2705,7 @@ myApp.factory('Modules', function () {
                 3,
                 5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -2762,7 +2762,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -2791,7 +2791,7 @@ myApp.factory('Modules', function () {
                 2.5,
                 4.5
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -2818,7 +2818,7 @@ myApp.factory('Modules', function () {
             "projects": true,
             "webcasts": true,
             "tutorials": true,
-            "semester": "Sem 2",
+
             "preclusion": "GEK1037",
             "exams": true,
             "attributes": {
@@ -2847,7 +2847,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -2877,7 +2877,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -2902,7 +2902,7 @@ myApp.factory('Modules', function () {
             "department": "Mathematics",
             "faculty": "Science",
             "pillar": "GET",
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": false,
@@ -2932,7 +2932,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -2965,7 +2965,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -2997,7 +2997,7 @@ myApp.factory('Modules', function () {
                 4,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -3029,7 +3029,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": false,
             "tutorials": false,
@@ -3052,7 +3052,7 @@ myApp.factory('Modules', function () {
             "department": "Physics",
             "faculty": "Science",
             "pillar": "GET",
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -3082,7 +3082,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "tutorials": true,
             "preclusion": "GEM1052",
@@ -3144,7 +3144,7 @@ myApp.factory('Modules', function () {
                 0,
                 6
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -3176,7 +3176,7 @@ myApp.factory('Modules', function () {
                 4,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -3206,7 +3206,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": false,
@@ -3243,7 +3243,7 @@ myApp.factory('Modules', function () {
                 4,
                 2.5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -3277,7 +3277,7 @@ myApp.factory('Modules', function () {
                 0,
                 6
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -3308,7 +3308,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -3344,7 +3344,7 @@ myApp.factory('Modules', function () {
                 1.5,
                 4.5
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -3373,7 +3373,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -3403,7 +3403,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -3435,7 +3435,7 @@ myApp.factory('Modules', function () {
                 2,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -3467,7 +3467,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -3499,7 +3499,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -3536,7 +3536,7 @@ myApp.factory('Modules', function () {
                 0,
                 7
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -3566,7 +3566,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -3598,7 +3598,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -3629,7 +3629,7 @@ myApp.factory('Modules', function () {
                 4,
                 2
             ],
-            "semester": "Sem 1",
+
             "projects": false,
             "webcasts": false,
             "tutorials": true,
@@ -3658,7 +3658,7 @@ myApp.factory('Modules', function () {
                 4,
                 2.5
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -3690,7 +3690,7 @@ myApp.factory('Modules', function () {
                 4,
                 3
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": true,
@@ -3726,7 +3726,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -3757,7 +3757,7 @@ myApp.factory('Modules', function () {
                 1,
                 6
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": true,
@@ -3793,7 +3793,7 @@ myApp.factory('Modules', function () {
                 4,
                 4
             ],
-            "semester": "Sem 2",
+
             "projects": false,
             "webcasts": true,
             "tutorials": false,
@@ -3822,7 +3822,7 @@ myApp.factory('Modules', function () {
                 3,
                 3
             ],
-            "semester": "Sem 1 and 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -3854,7 +3854,7 @@ myApp.factory('Modules', function () {
                 3,
                 4
             ],
-            "semester": "Sem 1",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -3883,7 +3883,7 @@ myApp.factory('Modules', function () {
                 2,
                 5
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": false,
             "tutorials": true,
@@ -3912,7 +3912,7 @@ myApp.factory('Modules', function () {
                 4,
                 2
             ],
-            "semester": "Sem 2",
+
             "projects": true,
             "webcasts": true,
             "tutorials": false,
@@ -3933,7 +3933,7 @@ myApp.factory('Modules', function () {
 myApp.controller('myCtrl', function ($scope, Modules) {
     $scope.data = Modules;
     $scope.filter = {};
-    $scope.categories = ['pillar', 'department', 'webcasts', 'exams', 'tutorials', 'projects'];
+    $scope.categories = ['pillar', 'semester', 'department', 'webcasts', 'exams', 'tutorials', 'projects'];
 
     $scope.removeTask = function (taskId) {
         alert("Task Id is " + taskId);
@@ -4010,7 +4010,7 @@ myApp.controller('myCtrl', function ($scope, Modules) {
             }
             else if ($scope.filter.hasOwnProperty(obj)) {//statement here is rather extra 
                 if (noSubFilter($scope.filter[obj])) continue; //if none is checked from the cat, will continue
-                if (!$scope.filter[obj][data[obj]]) { //if data[obj] is in obj (dictionary), the item is displayed. matchesAND = true
+                if (!$scope.filter[obj][data[obj]]) { //if data[obj] in obj (dictionary) has a value of true, the item is displayed. matchesAND = true
                     matchesAND = false;
                     break;
                 }
@@ -4036,11 +4036,11 @@ myApp.controller('myCtrl', function ($scope, Modules) {
 
     function check(arr) { //arr here is going to be from semesterToArr
         for (var x = 0; x < arr.length; x++) {
-            if (!$scope.filter['semester'][arr[x]]) {
-                return true;
+            if ($scope.filter['semester'][arr[x]]) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     $scope.semesterFunc = function (arr) {
@@ -4104,20 +4104,26 @@ myApp.controller('myCtrl', function ($scope, Modules) {
         }
     }
 
-    $scope.websiteLinks = function (code, title) {
-        return '<h5><a href = ' + "https://nusmods.com/modules/" + code + "/" + title.replace(/ /g, "-") +
-            ' target = "_blank">NUSMods</a>' + "    /     " + '<a href = ' + "https://ivle.nus.edu.sg/v1/lms/public/list_course_public.aspx?code=" +
-            code + "&title=&lecName=&acadyear=&semester=&ModTitleExact=Y&LecNameExact=N" + ' target = "_blank">IVLE</a>' + "    /     " + '<a href = ' +
-            "https://www.google.com/search?q=" + code + ' target = "_blank">Google</a>' + '</h5>';
-    }
-
     $scope.scroll = function () {
         window.scrollTo(0, 0);
     }
 
     $scope.page = 1;
+
+    $scope.backToFirstPage = function () {
+        $scope.page = 1;
+    }
+
+    $scope.totalPageNum = function (val) {
+        return Math.ceil(val);
+    }
+
+    $scope.rangeCount = function (val) { //val here is the page count.
+        return 1 + (val-1) * 10;
+    }
+
+    $scope.rangeCountEnd = function (val) { //val here is the filtered length.
+        if (val < 10 || val / ($scope.page*10) < 1) return val;
+        if (val / ($scope.page*10) > 1) return $scope.page*10;
+    }
 });
-
-
-
-
