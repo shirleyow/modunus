@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="shortcut icon" href="#">
   <meta charset="UTF-8">
   <title>ModuNUS</title>
 
@@ -16,10 +17,11 @@
 </head>
 
 <body>
-  <main ng-app="myApp">
+  <main ng-app="myApp" ng-cloak>
     <section ng-controller="myCtrl">
       <div class="filter">
-        <h2><b>Filters</b></h2>
+        <h2><b>Filters</b><br>
+          <button ng-click = "clearFilters()" style = "font-size: 12px; color: green; float: right; text-decoration: underline">Clear all filters</button></h2>
         <hr />
         <menu class="filter-box" ng-repeat="cat in categories" ng-init="filter[cat]={}">
           <button
@@ -58,8 +60,8 @@
           </div>
         </form>
         <article class="box">
-          {{filtered.length | number}} module(s) found.<br>Displaying {{rangeCount(page)}} - {{rangeCountEnd(filtered.length)}}<span style="text-align: right; display: block">Page
-            {{page}} of {{totalPageNum(filtered.length / 10)}}</span>
+          {{filtered.length | number}} module(s) found.<br><span ng-hide = "filtered.length === 0">Displaying {{rangeCount(page)}} - {{rangeCountEnd(filtered.length)}}<span style="text-align: right; display: block">Page
+            {{page}} of {{totalPageNum(filtered.length / 10)}}</span></span>
           <br>
           <br>
           <p class="moduleinfo"
@@ -85,7 +87,7 @@
               <hr>
             </div>
           </p>
-          <dir-pagination-controls max-size="25" direction-links="true" boundary-links="true" on-page-change="scroll()">
+          <dir-pagination-controls max-size="10" direction-links="true" boundary-links="true" on-page-change="scroll()">
           </dir-pagination-controls>
         </article>
     </section>
