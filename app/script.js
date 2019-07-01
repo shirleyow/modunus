@@ -2899,7 +2899,7 @@ myApp.factory('Modules', function () {
             "title": "Cyber Security",
             "description": "The Internet has become the most widely used medium for commerce and communication as its infrastructure can be quickly and easily set up to link to the worldwide network and access information globally. Its growth over the last few years has been phenomenal. With these activities, countries are beginning to recognize that this new technology can not only expand the reach and power of traditional crimes, but also breed new forms of criminal activity. On the successful completion of this module, students should gain sufficient baseline knowledge to be able to identify, assess and respond to a variety of cybercrime scenarios, including industrial espionage, cyber-terrorism, communications eavesdropping, computer hacking, software viruses, denial-of-service, destruction and modification of data, distortion and fabrication of information, forgery, control and disruption of information. Students will also learn about countermeasures, including authentication, encryption, auditing, monitoring, technology risk management, intrusion detection, and firewalls, and the limitations of these countermeasures.",
             "moduleCredit": "4",
-            "department": "Mathematics",
+            "department": "Computing",
             "faculty": "Science",
             "pillar": "GET",
 
@@ -3556,7 +3556,7 @@ myApp.factory('Modules', function () {
             "title": "Computational Thinking",
             "description": "Computational thinking (CT) is an important 21st century skill and a fundamental method for solving complex problems. CT involves problem formulation, abstraction, decomposition, pattern recognition, and algorithm design. This module emphasizes the thinking process, and the communication and substantiation of the process, rather than focusing on coding. Students learn to apply CT to understand and solve everyday problems within and across disciples. Students learn to leverage on CT to ask new questions, to formulate new problems, and develop new solutions.",
             "moduleCredit": "4",
-            "department": "Mathematics",
+            "department": "Computing",
             "faculty": "NUS",
             "pillar": "GET",
             "workload": [
@@ -4112,6 +4112,7 @@ myApp.controller('myCtrl', function ($scope, Modules) {
 
     $scope.backToFirstPage = function () {
         $scope.page = 1;
+        window.scrollTo(0, 0);
     }
 
     $scope.totalPageNum = function (val) {
@@ -4123,7 +4124,16 @@ myApp.controller('myCtrl', function ($scope, Modules) {
     }
 
     $scope.rangeCountEnd = function (val) { //val here is the filtered length.
-        if (val < 10 || val / ($scope.page*10) < 1) return val;
+        if (val < 10 || val / ($scope.page*10) < 1 || val === 10) return val;
         if (val / ($scope.page*10) > 1) return $scope.page*10;
+    }
+
+    $scope.clearFilters = function () {
+        for (var key in $scope.filter) {
+            for (var key2 in $scope.filter[key]) {
+                $scope.filter[key][key2] = false;
+            }
+        }
+        $scope.backToFirstPage();
     }
 });
