@@ -21,74 +21,84 @@
     <section ng-controller="myCtrl">
       <div class="filter">
         <h2><b>Filters</b><br>
-          <button ng-click = "clearFilters()" style = "font-size: 12px; color: green; float: right; text-decoration: underline">Clear all filters</button></h2>
+          <button ng-click="clearFilters()"
+            style="font-size: 12px; color: green; float: right; text-decoration: underline">Clear all filters</button>
+        </h2>
         <hr />
         <menu class="filter-box" ng-repeat="cat in categories" ng-init="filter[cat]={}">
           <button
             ng-click="toggle = !toggle">{{toggle ? (capitalise(cat) + " &#9650") : (capitalise(cat) + " &#9660")}}</button>
           <div class='hr'>
             <div ng-show="toggle">
-              <md-item ng-repeat="value in getItems(cat, data)">
-                <input type="checkbox" ng-model="filter[cat][value]" ng-change = "backToFirstPage()">
-                {{filterNames(value)}} <br>
-                </input>
+              <md-item ng-repeat="value in getItems(cat, data)" ng-hide="numFiltered(cat,value) === 0">
+                <label><input type="checkbox" ng-model="filter[cat][value]" ng-change="backToFirstPage()">
+                  <span class="underline_hover disable-select">{{filterNames(value)}}
+                    ({{numFiltered(cat, value)}})</span>
+                </label>
+                <br>
               </md-item>
             </div>
           </div>
           <hr>
         </menu>
         <menu class="filter-box" ng-init="filter['pass/fail']={}">
-            <button
-              ng-click="toggle2 = !toggle2">{{toggle2 ? (capitalise('pass/fail') + " &#9650") : (capitalise('pass/fail') + " &#9660")}}</button>
-            <div class='hr'>
-              <div ng-show="toggle2">
-                <md-item ng-repeat="value in getItems('pass/fail', data)">
-                  <input type="checkbox" ng-model="filter['pass/fail'][value]" ng-change = "backToFirstPage()">
-                  {{filterNames(value)}} <br>
-                  </input>
-                </md-item>
-              </div>
+          <button
+            ng-click="toggle2 = !toggle2">{{toggle2 ? (capitalise('pass/fail') + " &#9650") : (capitalise('pass/fail') + " &#9660")}}</button>
+          <div class='hr'>
+            <div ng-show="toggle2">
+              <md-item ng-repeat="value in getItems('pass/fail', data)" ng-hide="numFiltered('pass/fail',value) === 0">
+                <label><input type="checkbox" ng-model="filter['pass/fail'][value]" ng-change="backToFirstPage()">
+                  <span class="underline_hover disable-select">{{value === true ? "No" : "Yes"}}
+                    ({{numFiltered("pass/fail", value)}})</span>
+                </label>
+                <br>
+              </md-item>
             </div>
-          </menu>
+          </div>
+        </menu>
       </div>
       <div class="container" style="padding:0px 0px 150px 250px;">
-        <h2><b>Search for GEMs</b></h2>
-        <form role="form">
-          <div class="search">
-            <input ng-model="searchText" class="form-control input-lg" id="txt-search"
-              placeholder="Type your module code/name" ng-change = "backToFirstPage()">
-          </div>
-        </form>
-        <article class="box">
-          {{filtered.length | number}} module(s) found.<br><span ng-hide = "filtered.length === 0">Displaying {{rangeCount(page)}} - {{rangeCountEnd(filtered.length)}}<span style="text-align: right; display: block">Page
-            {{page}} of {{totalPageNum(filtered.length / 10)}}</span></span>
-          <br>
-          <br>
-          <p class="moduleinfo"
-            ng-repeat="item in filtered=(data | filter:filterByPropertiesMatchingAND | filter:search)">
-            <div dir-paginate="item in filtered|itemsPerPage:10" current-page="page">
-              <b>{{item.moduleCode}} - {{item.title}}</b><br><br>
-              Webcasts {{(item.webcasts) && "&#10004" || "&#10008"}}<br>
-              Exams {{(item.exams) && "&#10004" || "&#10008"}}<br>
-              Tutorials {{(item.tutorials) && "&#10004" || "&#10008"}}<br>
-              Group Projects {{(item.projects) && "&#10004" || "&#10008"}}<br>
-              Pass/Fail Option {{(!item.hasOwnProperty("attributes")) && "&#10004" || "&#10008"}}<br>
-              Category: {{item.department}}<br>
-              Semester(s): {{semesterFunc(item.semesterData)}}
-              <br>
-              <br>
-              {{item.description}}
-              <br>
-              <br>
-              <a href="https://nusmods.com/modules/{{item.moduleCode}}/{{item.title}}" target="_blank">NUSMods</a> /
-              <a href="https://ivle.nus.edu.sg/v1/lms/public/list_course_public.aspx?code={{item.moduleCode}}&title=&lecName=&acadyear=&semester=&ModTitleExact=Y&LecNameExact=N"
-                target="_blank">IVLE</a> / <a href="https://www.google.com/search?q={{item.moduleCode}}"
-                target="_blank">Google</a>
-              <hr>
+        <div class = "header_background">
+          <h2><b>Search for GEMs</b></h2>
+          <form role="form">
+            <div class="search">
+              <input ng-model="searchText" class="form-control input-lg" id="txt-search"
+                placeholder="Type your module code/name" ng-change="backToFirstPage()">
             </div>
-          </p>
-          <dir-pagination-controls max-size="10" direction-links="true" boundary-links="true" on-page-change="scroll()">
-          </dir-pagination-controls>
+          </form>
+          </div>
+          <article class="box">
+            {{filtered.length | number}} module(s) found.<br><span ng-hide="filtered.length === 0">Displaying
+              {{rangeCount(page)}} - {{rangeCountEnd(filtered.length)}}<span
+                style="text-align: right; display: block">Page
+                {{page}} of {{totalPageNum(filtered.length / 10)}}</span></span>
+        <br>
+        <br>
+        <p class="moduleinfo"
+          ng-repeat="item in filtered=(data | filter:filterByPropertiesMatchingAND | filter:search)">
+          <div dir-paginate="item in filtered|itemsPerPage:10" current-page="page">
+            <b>{{item.moduleCode}} - {{item.title}}</b><br><br>
+            Webcasts {{(item.webcasts) && "&#10004" || "&#10008"}}<br>
+            Exams {{(item.exams) && "&#10004" || "&#10008"}}<br>
+            Tutorials {{(item.tutorials) && "&#10004" || "&#10008"}}<br>
+            Group Projects {{(item.projects) && "&#10004" || "&#10008"}}<br>
+            Pass/Fail Option {{(!item.hasOwnProperty("attributes")) && "&#10004" || "&#10008"}}<br>
+            Category: {{item.department}}<br>
+            Semester(s): {{semesterFunc(item.semesterData)}}
+            <br>
+            <br>
+            {{item.description}}
+            <br>
+            <br>
+            <a href="https://nusmods.com/modules/{{item.moduleCode}}/{{item.title}}" target="_blank">NUSMods</a> /
+            <a href="https://ivle.nus.edu.sg/v1/lms/public/list_course_public.aspx?code={{item.moduleCode}}&title=&lecName=&acadyear=&semester=&ModTitleExact=Y&LecNameExact=N"
+              target="_blank">IVLE</a> / <a href="https://www.google.com/search?q={{item.moduleCode}}"
+              target="_blank">Google</a>
+            <hr>
+          </div>
+        </p>
+        <dir-pagination-controls max-size="10" direction-links="true" boundary-links="true" on-page-change="scroll()">
+        </dir-pagination-controls>
         </article>
     </section>
     </div>
@@ -100,7 +110,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/michaelbromley/angularUtils/src/directives/pagination/dirPagination.js"
-  type="text/javascript"></script>
+    type="text/javascript"></script>
 
   <script src="./script.js"></script>
   </mat-sidenav-content>
