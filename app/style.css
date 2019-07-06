@@ -44,3 +44,21 @@ dir-pagination-controls {
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
+md-item label {
+  font-weight: 400;
+}
+
+.underline_hover:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.disable-select { 
+  -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none;
+        -ms-user-select: none; 
+            user-select: none;
+}
