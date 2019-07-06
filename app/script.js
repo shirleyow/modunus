@@ -3085,6 +3085,7 @@ myApp.factory('Modules', function () {
 
             "projects": true,
             "tutorials": true,
+            "webcasts": true,
             "preclusion": "GEM1052",
             "exams": true,
             "attributes": {
@@ -3944,10 +3945,6 @@ myApp.controller('myCtrl', function ($scope, Modules) {
         $scope.LoadItem(id);
     }
 
-    $scope.GetUrl = function (id) {
-        return "contentPage.html";
-    }
-
     $scope.getQueryVariable = function () {
         var qs = new Querystring();
         var v1 = qs.get("myVar1");
@@ -3976,7 +3973,7 @@ myApp.controller('myCtrl', function ($scope, Modules) {
             return [1, 2, "Special Term I", "Special Term II"];
         }
         if (obj === "pass/fail") {
-            return [false, true];
+            return [true, false];
         }
         else {
             arr = (array || []).map(function (w) {
@@ -3991,6 +3988,7 @@ myApp.controller('myCtrl', function ($scope, Modules) {
             return arr;
         }
     };
+
     // matching with AND operator
     $scope.filterByPropertiesMatchingAND = function (data) {
         var matchesAND = true;
@@ -4003,7 +4001,7 @@ myApp.controller('myCtrl', function ($scope, Modules) {
                 }
             } else if (obj === 'pass/fail') {
                 if (noSubFilter($scope.filter[obj])) continue;
-                if ($scope.filter[obj][data.hasOwnProperty("attributes")]) {
+                if (!$scope.filter[obj][data.hasOwnProperty("attributes")]) {
                     matchesAND = false;
                     break;
                 }
@@ -4120,12 +4118,12 @@ myApp.controller('myCtrl', function ($scope, Modules) {
     }
 
     $scope.rangeCount = function (val) { //val here is the page count.
-        return 1 + (val-1) * 10;
+        return 1 + (val - 1) * 10;
     }
 
     $scope.rangeCountEnd = function (val) { //val here is the filtered length.
-        if (val < 10 || val / ($scope.page*10) < 1 || val === 10) return val;
-        if (val / ($scope.page*10) > 1) return $scope.page*10;
+        if (val < 10 || val / ($scope.page * 10) < 1 || val === 10) return val;
+        if (val / ($scope.page * 10) > 1) return $scope.page * 10;
     }
 
     $scope.clearFilters = function () {
@@ -4135,5 +4133,155 @@ myApp.controller('myCtrl', function ($scope, Modules) {
             }
         }
         $scope.backToFirstPage();
+    }
+
+    $scope.allUnchecked = function (cat) { //cat here is the category
+        for (var key in $scope.filter[cat]) {
+            if ($scope.filter[cat][key] === true) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    $scope.whichAreChecked = function () {
+        var dict = {};
+        for (var category in $scope.filter) {
+            dict[category] = [];
+            for (var value in $scope.filter[category]) {
+                if ($scope.filter[category][value] === true) {
+                    dict[category].push(value);
+                }
+            }
+        }
+        return dict;
+    }
+
+    $scope.numFiltered = function (cat, val) { //cat is category, val here is value
+        var count = 0;
+        if (cat === "semester") {
+            if ($scope.allUnchecked("semester")) {
+                for (var item in $scope.filtered) {
+                    for (var sem in $scope.filtered[item]["semesterData"]) {
+                        if ($scope.filtered[item]["semesterData"][sem]['semester'] === val) {
+                            count++;
+                            break;
+                        }
+                    }
+                }
+                return count;
+            } else {
+                var checked = $scope.whichAreChecked();
+                for (var item in $scope.data) {
+                    var bool = true;
+                    for (var key in checked) {
+                        if (checked[key].length > 0 && key !== "semester") {
+                            if (key === "pass/fail") {
+                                if (checked[key].indexOf($scope.data[item].hasOwnProperty("attributes").toString()) === -1) {
+                                    bool = false;
+                                }
+                            } else if (checked[key].indexOf($scope.data[item][key].toString()) === -1) {
+                                bool = false;
+                            }
+                        } else continue;
+                    }
+                    if (bool === true) {
+                        for (var sem in $scope.data[item]["semesterData"]) {
+                            if ($scope.data[item]["semesterData"][sem]["semester"] === val) {
+                                count++;
+                                break;
+                            }
+                        }
+                    }
+                }
+                return count;
+            }
+        } else if (cat === 'pass/fail') {
+            if ($scope.allUnchecked("pass/fail")) {
+                for (var item in $scope.filtered) {
+                    if ($scope.filtered[item].hasOwnProperty('attributes') === val) {
+                        count++;
+                    }
+                }
+                return count;
+            } else {
+                var checked = $scope.whichAreChecked();
+                for (var item in $scope.data) {
+                    var bool = true;
+                    for (var key in checked) {
+                        if (checked[key].length > 0 && key !== cat) {
+                            if (key === 'semester') {
+                                var present = false;
+                                for (var sem in $scope.data[item]["semesterData"]) {
+                                    if (checked[key].indexOf($scope.data[item]['semesterData'][sem]['semester'].toString()) !== -1) {
+                                        present = true;
+                                    }
+                                }
+                                if (present !== true) {
+                                    bool = false;
+                                }
+                            } else {
+                                if (checked[key].indexOf($scope.data[item][key].toString()) === -1) {
+                                    bool = false;
+                                }
+                            }
+                        } else {
+                            continue;
+                        }
+                    }
+                    if (bool === true) {
+                        if ($scope.data[item].hasOwnProperty('attributes') === val) {
+                            count++;
+                        }
+                    }
+                }
+                return count;
+            }
+        } else {
+            if ($scope.allUnchecked(cat)) {
+                for (var item in $scope.filtered) {
+                    if ($scope.filtered[item][cat] === val) {
+                        count++;
+                    }
+                }
+                return count;
+            } else {
+                var checked = $scope.whichAreChecked();
+                for (var item in $scope.data) {
+                    var bool = true;
+                    for (var key in checked) {
+                        if (checked[key].length > 0 && key !== cat) {
+                            if (key === 'semester') {
+                                var present = false;
+                                for (var sem in $scope.data[item]["semesterData"]) {
+                                    if (checked[key].indexOf($scope.data[item]['semesterData'][sem]['semester'].toString()) !== -1) {
+                                        present = true;
+                                    }
+                                }
+                                if (present !== true) {
+                                    bool = false;
+                                }
+                            } else if (key === 'pass/fail') {
+                                if (checked[key].indexOf($scope.data[item].hasOwnProperty("attributes").toString()) === -1) {
+                                    bool = false;
+                                }
+                            } else {
+                                if (checked[key].indexOf($scope.data[item][key].toString()) === -1) {
+                                    bool = false;
+                                }
+                            }
+                        } else {
+                            continue;
+                        }
+                    }
+                    if (bool === true) {
+                        if ($scope.data[item][cat] === val) {
+                            count++;
+                        }
+                    }
+                }
+                return count;
+            }
+        }
     }
 });
