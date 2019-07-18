@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngMaterial', 'angularUtils.directives.dirPagination']);
+var myApp = angular.module('myApp', ['ngAnimate', 'ngMaterial', 'angularUtils.directives.dirPagination']);
 
 myApp.factory('Modules', function () {
     var modules = [
@@ -134,7 +134,7 @@ myApp.factory('Modules', function () {
         {
             "moduleCode": "GEH1008",
             "title": "Nations & Nat'lisms in S Asia",
-            "description": "This module examines the role which nationalism has played in the formation and political development of the nations and states of South Asia.  It examines nationalist forces in anti-colonial struggles, in post-colonial state formation and in contemporary political developments.  It will be of relevance to students with an interest in political developments in Asia, with particular reference to forms of nationalism and nation-building",
+            "description": "This module examines the role which nationalism has played in the formation and political development of the nations and states of South Asia.  It examines nationalist forces in anti-colonial struggles, in post-colonial state formation and in contemporary political developments.  It will be of relevance to students with an interest in political developments in Asia, with particular reference to forms of nationalism and nation-building.",
             "moduleCredit": "4",
             "department": "South Asian Studies",
             "faculty": "Arts and Social Science",
@@ -264,36 +264,6 @@ myApp.factory('Modules', function () {
                     "semester": 1,
                     "examDate": "2018-12-04T09:00:00.000Z",
                     "examDuration": 120
-                }
-            ]
-        },
-        {
-            "moduleCode": "GEH1014",
-            "title": "Samurai, Geisha, Yakuza as Self or Other",
-            "description": "This module challenges the foundation of human knowledge. Examining cultural icons from Japan's past and present we will unpack the assumptions, stereotypes, narrative strategies, and visualizing techniques of representing Japan. Students will probe one or more of Japan's three famous cultural icons - the samurai, the geisha, and/or the yakuza - as they appear in literature, visual and performance arts, and academic writings. By the end of the module students will not only have a richer understanding of the 'realities' behind such icons, but more significantly, they will be equipped to challenge stereotypes of Japan presented by journalism, popular culture, and the humanistic and social sciences.  Ultimately such discovery will lead students to question their own knowledge of self and other. Students should refer to the module IVLE page for details of the selected icon(s) for the current semester.",
-            "moduleCredit": "4",
-            "department": "Japanese Studies",
-            "faculty": "Arts and Social Science",
-            "pillar": "GEH",
-            "workload": [
-                2,
-                1,
-                0,
-                2,
-                5
-            ],
-
-            "projects": true,
-            "webcasts": false,
-            "tutorials": true,
-            "preclusion": "GEK2022",
-            "exams": false,
-            "attributes": {
-                "su": true
-            },
-            "semesterData": [
-                {
-                    "semester": 1
                 }
             ]
         },
@@ -642,6 +612,35 @@ myApp.factory('Modules', function () {
             "semesterData": [
                 {
                     "semester": 1
+                }
+            ]
+        },
+        {
+            "moduleCode": "GEH1031",
+            "title": "Understanding the Universe",
+            "description": "The first part of the module covers the observations of celestial objects and their influences on the ancient cultures. Students will learn how calendars and astrology were developed, and how the fundamental laws of nature were discovered. The second part covers the use of telescopes and space missions to explore the universe. Discoveries of stars and galaxies and their impact on mankind's perceptions of the Universe will be explored. Students will learn how Earth formed as a planet that develops and sustains life. There will be a discussion on the latest developments in searching for Earth-like extraterrestrial objects, and explore their impacts on the societies.",
+            "moduleCredit": "4",
+            "department": "Physics",
+            "faculty": "Science",
+            "pillar": "GEH",
+            "workload": [
+                2.5,
+                0.5,
+                0,
+                3,
+                4
+            ],
+            "projects": true,
+            "webcasts": false,
+            "tutorials": true,
+            "exams": false,
+            "preclusion": "GEK1520",
+            "attributes": {
+                "su": true
+            },
+            "semesterData": [
+                {
+                    "semester": 2
                 }
             ]
         },
@@ -1197,37 +1196,6 @@ myApp.factory('Modules', function () {
             ]
         },
         {
-            "moduleCode": "GEH1057",
-            "title": "Materials: The Enabling Substance of Civilization",
-            "description": "The module addresses the key roles of enabling materials in driving the sweeping changes of human history and the rapid development of civilization, technology and society. This module will examine, from the Stone Age to the 21st century, how the different types of enabling materials were discovered, became available to the general people, completely transformed their lives, and consequently shaped the entire course of our civilization. This module will also highlight the latest advances in materials, their uses in our daily lives and future sustainable development, such as IT, iPhones, Boeing 787, Airbus A380, energy-saving buildings and smart transport.",
-            "moduleCredit": "4",
-            "department": "Materials Science and Engineering",
-            "faculty": "Engineering",
-            "pillar": "GEH",
-            "workload": [
-                4,
-                0,
-                0,
-                1,
-                5
-            ],
-
-            "projects": true,
-            "webcasts": false,
-            "tutorials": false,
-            "exams": true,
-            "attributes": {
-                "su": true
-            },
-            "semesterData": [
-                {
-                    "semester": 2,
-                    "examDate": "2019-04-30T09:00:00.000Z",
-                    "examDuration": 120
-                }
-            ]
-        },
-        {
             "moduleCode": "GEH1058",
             "title": "The Theatre Experience",
             "description": "While many of us spend much of our lives glued to small computer screens, theatrical productions continue to bring people together for shared experiences. What are the attractions of theatre, what makes it distinct, and how can it enrich our understanding of human society? This module, which requires no prior knowledge of theatre, starts with the spectator’s experience and works outwards. We learn how to analyse theatre’s styles and effects. We explore how human societies use theatre to confront questions and express beliefs, hopes, and anxieties. We examine how cultures influence each other through theatre, and how theatre provokes change.",
@@ -1254,6 +1222,36 @@ myApp.factory('Modules', function () {
             "semesterData": [
                 {
                     "semester": 2
+                }
+            ]
+        },
+        {
+            "moduleCode": "GEH1059",
+            "title": "Living in the Nuclear World",
+            "description": "The nuclear age dawned in 1945. Since then, the world has been profoundly shaped by the implications of nuclear fission. From science and engineering to war and peace, from design and popular culture to health and safety, exposure to the nuclear condition has shaped the lives of millions of people worldwide. This module offers a sweeping panorama of the nuclear world over the last century, from early scientific experiments to the recent Fukushima accident, with stops along the way in Japan, the Bikini atoll, North Korea, India, Israel, France, Ukraine, and the United States.",
+            "moduleCredit": "4",
+            "department": "Southeast Asian Studies",
+            "faculty": "Arts and Social Science",
+            "pillar": "GEH",
+            "projects": false,
+            "webcasts": true,
+            "tutorials": true,
+            "exams": true,
+            "workload": [
+                2,
+                1,
+                0,
+                2,
+                5
+            ],
+            "attributes": {
+                "su": true
+            },
+            "semesterData": [
+                {
+                    "semester": 1,
+                    "examDate": "2019-11-30T01:00:00.000Z",
+                    "examDuration": 120
                 }
             ]
         },
@@ -2624,42 +2622,6 @@ myApp.factory('Modules', function () {
             ]
         },
         {
-            "moduleCode": "GES1033",
-            "title": "Who moved my OB markers?",
-            "description": "This module examines the topic of censorship in Singapore. It examines the origins and meaning of the term “OB marker” and Singapore’s history of regulating media and speech to contextualise the perception of strict state control on speech. Contemporary events related to speech and expression are critically examined to assess if the perception of strict state controls on speech in Singapore is still valid.",
-            "moduleCredit": "4",
-            "department": "Communications and New Media",
-            "faculty": "Arts and Social Science",
-            "pillar": "GES",
-            "workload": [
-                2,
-                1,
-                0,
-                2,
-                5
-            ],
-
-            "projects": false,
-            "webcasts": false,
-            "tutorials": true,
-            "exams": true,
-            "attributes": {
-                "su": true
-            },
-            "semesterData": [
-                {
-                    "semester": 1,
-                    "examDate": "2018-12-03T05:00:00.000Z",
-                    "examDuration": 120
-                },
-                {
-                    "semester": 2,
-                    "examDate": "2019-04-27T01:00:00.000Z",
-                    "examDuration": 120
-                }
-            ]
-        },
-        {
             "moduleCode": "GES1034",
             "title": "We the Citizens - Understanding Singapore’s Politics",
             "description": "The module initiates students into the workings of politics from the perspective of citizenship. What constitutes citizenship? What are the roles, duties and obligations of being a Singapore citizen? How do citizens interact and impact politics and decision making in Singapore? How have changes over the years, including (a) perspective of Singapore’s political history, (b) imperatives shaping national politics, (c) the political system, (d) its key structures and approaches to nation building, affected national politics and in turn, led to the political elites responding to changing demands of citizens? The role of civic and civil society will also be discussed.",
@@ -2720,30 +2682,30 @@ myApp.factory('Modules', function () {
             ]
         },
         {
-            "moduleCode": "GES1037",
-            "title": "A History of Singapore in Ten Objects",
-            "description": "This module facilitates an introductory inquiry into Singaporean pasts based on a cache of 'objects', broadly defined. Students will be invited to make critical observations and bring to bear their imaginations on a variety of 'objects' from Singapore’s pasts: sand, well, club, movie and sound card, among others. Students will then exercise their historical imaginations to generate interpretive possibilities pertaining to Singapore's past prompted by these objects, both individually and collectively. In reflecting on these objects and their possible connections to the past, students will emerge from this module with a broad, diverse, creative and concrete grasp of Singapore's histories.",
+            "moduleCode": "GES1038",
+            "title": "La Kopi: Forging of the Chinese Singaporean Community",
+            "description": "This module introduces students to the forging of the Chinese Singaporean community by observing the changes in linguistic data over time. Drawing linguistic\ndata from different aspects of society and entertainment (eg. food, movies, theatre and so on), the module aims to reveal to students how the Chinese community has\nevolved from being a community with multiple languages to a single, unified language. Influential professionals in their field of expertise will also share from their personal experience the evolution of the Chinese community, and how the Chinese Singaporean community fits into Singapore’s multiracial society.",
             "moduleCredit": "4",
-            "department": "History",
+            "department": "Chinese Studies",
             "faculty": "Arts and Social Science",
             "pillar": "GES",
+            "projects": false,
+            "webcasts": false,
+            "tutorials": true,
+            "exams": false,
             "workload": [
                 2,
                 1,
                 0,
-                2.5,
-                4.5
+                2,
+                5
             ],
-            "projects": false,
-            "webcasts": true,
-            "tutorials": true,
-            "exams": false,
             "attributes": {
                 "su": true
             },
             "semesterData": [
                 {
-                    "semester": "Special Term II"
+                    "semester": 2
                 }
             ]
         },
@@ -2767,6 +2729,28 @@ myApp.factory('Modules', function () {
             "webcasts": false,
             "tutorials": true,
             "exams": false,
+            "attributes": {
+                "su": true
+            },
+            "semesterData": [
+                {
+                    "semester": 1
+                }
+            ]
+        },
+        {
+            "moduleCode": "GES1040",
+            "title": "Prominent Chinese in Colonial Singapore",
+            "description": "This module offers students an opportunity to understand prominent Chinese pioneers and leaders in Singapore during the colonial period. Selected personalities who are either community leaders, entrepreneurs, philanthropists, patriots, war heroes, and/or social activists will be discussed and examined in historical, social, economic, cultural and political contexts of Singapore in the 19th and first half of the 20th centuries.",
+            "moduleCredit": "4",
+            "department": "Chinese Studies",
+            "faculty": "Arts and Social Science",
+            "pillar": "GES",
+            "projects": false,
+            "webcasts": true,
+            "tutorials": true,
+            "exams": false,
+            "preclusion": "CH2298 Chinese Personalities in Southeast Asia",
             "attributes": {
                 "su": true
             },
@@ -3553,7 +3537,7 @@ myApp.factory('Modules', function () {
             ]
         },
         {
-            "moduleCode": "GET1031A",
+            "moduleCode": "GET1031",
             "title": "Computational Thinking",
             "description": "Computational thinking (CT) is an important 21st century skill and a fundamental method for solving complex problems. CT involves problem formulation, abstraction, decomposition, pattern recognition, and algorithm design. This module emphasizes the thinking process, and the communication and substantiation of the process, rather than focusing on coding. Students learn to apply CT to understand and solve everyday problems within and across disciples. Students learn to leverage on CT to ask new questions, to formulate new problems, and develop new solutions.",
             "moduleCredit": "4",
@@ -3612,35 +3596,6 @@ myApp.factory('Modules', function () {
                     "semester": 1,
                     "examDate": "2018-12-04T09:00:00.000Z",
                     "examDuration": 120
-                }
-            ]
-        },
-        {
-            "moduleCode": "GET1033",
-            "title": "Exploring Computational Media Literacy",
-            "description": "This module explores how the computer can be used as a medium for expression. Just as it is essential to be literate in the traditional sense, it is increasingly important to be literate (able to read and write) in computational media, such as webpages, social media, smartphone apps, computer games, etc. Through a balance of theory and practice, this interdisciplinary module exposes students to the history and principles behind computation. Students learn, through hands-on exercises, the ways that computation underpins key aspects of modern life, such as the internet, mediated communication, business and commerce, science and technology, and the arts.",
-            "moduleCredit": "4",
-            "department": "Communications and New Media",
-            "faculty": "Arts and Social Science",
-            "pillar": "GET",
-            "workload": [
-                2,
-                2,
-                0,
-                4,
-                2
-            ],
-
-            "projects": false,
-            "webcasts": false,
-            "tutorials": true,
-            "exams": false,
-            "attributes": {
-                "su": true
-            },
-            "semesterData": [
-                {
-                    "semester": 1
                 }
             ]
         },
@@ -3780,31 +3735,90 @@ myApp.factory('Modules', function () {
             ]
         },
         {
-            "moduleCode": "GET1039",
-            "title": "What, When and Where is Art?",
-            "description": "This course explores the arts through three different, but overlapping, questions: What is art? (including the polemics associated with this question), When is art? (i.e. creations that are interpreted as art, or not art, at different times), and Where is art? (i.e. why something is perceived as art when it is in one setting, but is generally otherwise unnoticed). Visits to Singapore locations for case studies are required. Students will study and apply several disparate theories, and will also write their own.",
+            "moduleCode": "GET1038",
+            "title": "Communication in Small Groups",
+            "description": "This module is designed to help students understand the theoretical and practical aspects of small group communication so that they may function more\neffectively in groups. Particularly, the module will facilitate discussion on effective communication in the group communication process. Effective communication in a community, public, or professional setting requires\nan understanding of how people behave in a group context and how they interact with others inside and outside the group.",
             "moduleCredit": "4",
-            "department": "Philosophy",
-            "faculty": "YST Conservatory of Music",
+            "department": "Communications and New Media",
+            "faculty": "Arts and Social Science",
             "pillar": "GET",
+            "projects": true,
+            "webcasts": false,
+            "tutorials": true,
+            "exams": true,
             "workload": [
                 2,
-                0,
+                1,
                 0,
                 4,
-                4
+                3
             ],
-
-            "projects": false,
-            "webcasts": true,
-            "tutorials": false,
-            "exams": false,
             "attributes": {
                 "su": true
             },
             "semesterData": [
                 {
-                    "semester": 2
+                    "semester": 2,
+                    "examDate": "2020-05-05T05:00:00.000Z",
+                    "examDuration": 120
+                }
+            ]
+        },
+        {
+            "moduleCode": "GET1040",
+            "title": "Communicating about the Arts",
+            "description": "We talk and write about the arts on a daily basis, especially in social media, but what makes talking and writing about the arts unique, challenging, and why should it be exciting? This course helps students further develop the basic concepts and expressive language needed to communicate more effectively about different art mediums and forms, and different ways to communicate about the arts, from opinions and evaluations, to formal reviews, to critical and theoretical responses. Students will do multiple oral and written assessments in this course.",
+            "moduleCredit": "4",
+            "department": "Communications and New Media",
+            "faculty": "YST Conservatory of Music",
+            "pillar": "GET",
+            "projects": true,
+            "webcasts": false,
+            "tutorials": true,
+            "exams": false,
+            "workload": [
+                0,
+                2,
+                0,
+                4,
+                4
+            ],
+            "attributes": {
+                "su": true
+            },
+            "semesterData": [
+                {
+                    "semester": 1
+                }
+            ]
+        },
+        {
+            "moduleCode": "GET1041",
+            "title": "Disney and the Theme Park World",
+            "description": "This general education module will explore the world of theme parks, originally inspired by the films and vision of Walt Disney. The course will examine a history of this leisure form, and examine how theme parks and theming offer us an interesting lens to understand the contemporary world. What are the values and ideologies that are inscribed within theme parks? Is there a  specific “culture” associated with Disney? By examining the Disney phenomenon and the world of theme parks, students will be challenged to think\ncritically about aspects of leisure and popular culture that shape our world views.",
+            "moduleCredit": "4",
+            "department": "Sociology",
+            "faculty": "Arts and Social Science",
+            "pillar": "GET",
+            "projects": false,
+            "webcasts": true,
+            "tutorials": true,
+            "exams": true,
+            "workload": [
+                2,
+                1,
+                0,
+                4,
+                3
+            ],
+            "attributes": {
+                "su": true
+            },
+            "semesterData": [
+                {
+                    "semester": 1,
+                    "examDate": "2019-12-04T09:00:00.000Z",
+                    "examDuration": 120
                 }
             ]
         },
@@ -3922,6 +3936,68 @@ myApp.factory('Modules', function () {
                 "su": true
             },
             "semesterData": [
+                {
+                    "semester": 2
+                }
+            ]
+        },
+        {
+            "moduleCode": "GET1049",
+            "title": "Thinking Strategically",
+            "description": "In our interactions with family, friends, and strangers, each of us have own goals, which may or may not coincide with the other party’s goals. Should I compete or cooperate? Should I move first or last? Should I issue a threat or a promise? This module introduces concepts and insights from game theory. We will apply strategic thinking to examples drawn from business, politics, evolutionary biology, sports, and everyday social interactions. We will learn by playing games in the classroom, analyzing movie scenes, and dissecting current events.",
+            "moduleCredit": "4",
+            "department": "NUS",
+            "faculty": "Arts and Social Science",
+            "pillar": "GET",
+            "projects": false,
+            "webcasts": false,
+            "tutorials": true,
+            "exams": true,
+            "workload": [
+                2,
+                1,
+                0,
+                3,
+                4
+            ],
+            "attributes": {
+                "su": true
+            },
+            "semesterData": [
+                {
+                    "semester": 2,
+                    "examDate": "2020-05-02T05:00:00.000Z",
+                    "examDuration": 120
+                }
+            ]
+        },
+        {
+            "moduleCode": "GET1050",
+            "title": "Computational Reasoning",
+            "description": "Through a series of fun and engaging hands-on activities, this module aims to equip students with the ability to thoughtfully apply computational tools when solving complex real-world problems. In particular, this module aims to impart students with the ability to critically self-evaluate the way they apply these tools, and thus be able to reason effectively in a variety of contexts. They will learn to identify problems and\ndesign solutions, while also developing a critical awareness of the merits and limits of their methods, thereby empowering them to make better-informed decisions and to articulate the reasons for those decisions.",
+            "moduleCredit": "4",
+            "department": "Philosophy",
+            "faculty": "Arts and Social Science",
+            "pillar": "GET",
+            "projects": false,
+            "webcasts": false,
+            "tutorials": true,
+            "exams": false,
+            "workload": [
+                2,
+                1,
+                0,
+                4,
+                3
+            ],
+            "preclusion": "GET1031A Computational Thinking",
+            "attributes": {
+                "su": true
+            },
+            "semesterData": [
+                {
+                    "semester": 1
+                },
                 {
                     "semester": 2
                 }
@@ -4185,6 +4261,11 @@ myApp.controller('myCtrl', function ($scope, Modules) {
                             }
                         } else continue;
                     }
+                    if ($scope.searchText) {
+                        if ($scope.data[item][moduleCode].indexOf($scope.searchText) === -1 && $scope.data[item][title].indexOf($scope.searchText) === -1) {
+                            bool = false;
+                        }
+                    }
                     if (bool === true) {
                         for (var sem in $scope.data[item]["semesterData"]) {
                             if ($scope.data[item]["semesterData"][sem]["semester"] === val) {
@@ -4227,6 +4308,11 @@ myApp.controller('myCtrl', function ($scope, Modules) {
                             }
                         } else {
                             continue;
+                        }
+                    }
+                    if ($scope.searchText) {
+                        if ($scope.data[item][moduleCode].indexOf($scope.searchText) === -1 && $scope.data[item][title].indexOf($scope.searchText) === -1) {
+                            bool = false;
                         }
                     }
                     if (bool === true) {
@@ -4274,6 +4360,11 @@ myApp.controller('myCtrl', function ($scope, Modules) {
                             continue;
                         }
                     }
+                    if ($scope.searchText) {
+                        if ($scope.data[item][moduleCode].indexOf($scope.searchText) === -1 && $scope.data[item][title].indexOf($scope.searchText) === -1) {
+                            bool = false;
+                        }
+                    }
                     if (bool === true) {
                         if ($scope.data[item][cat] === val) {
                             count++;
@@ -4284,4 +4375,8 @@ myApp.controller('myCtrl', function ($scope, Modules) {
             }
         }
     }
+});
+
+myApp.filter('encodeURIComponent', function () {
+    return window.encodeURIComponent;
 });
