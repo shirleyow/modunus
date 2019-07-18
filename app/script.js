@@ -461,7 +461,7 @@ myApp.factory('Modules', function () {
             "title": "Global Environmental Issues",
             "description": "GEH1025T is an interdisciplinary module that brings together perspectives from different disciplines to provide deep insights into known and emerging global environmental issues and to develop polcies for achieving environmental, economic and social sustainability in a holistic manner. Given the scope of the module and its educational outcomes, the module draws students from diverse disciplines within NUS including \"Law\", \"Business\" and \"Computing\", etc. The key strength of the module is its diversity in terms of disciplinary composition. To take advantage of this diversity, the module promotes \"collaborative learning\" through peer teaching & learning by dividing the large class into multi-disciplinary teams of 5 students. The instructor assigns reading materials to individual teams on broad topics that cut across human society and culture.",
             "moduleCredit": "4",
-            "department": "Environmental Engineering",
+            "department": "Civil and Environmental Engineering",
             "faculty": "Engineering",
             "pillar": "GEH",
             "workload": [
@@ -1388,7 +1388,7 @@ myApp.factory('Modules', function () {
             "title": "Art in Society",
             "description": "In this module students will learn that art does not exist apart from society. What is considered art is determined by ideas within a particular time period and social institutions. Furthermore, art is not only about the artist. As a social activity, art making involves elaborate cooperation among specialised personnel. Giving focus to visual art and using examples from Southeast Asia and beyond, topics covered include gender in the arts; governments, economies and religion in shaping the arts; artists and their art making as well as social dimensions of aesthetic experience and interpretation of art works.",
             "moduleCredit": "4",
-            "department": "Malay Studies",
+            "department": "Arts",
             "faculty": "Arts and Social Science",
             "pillar": "GEH",
             "workload": [
@@ -1450,7 +1450,7 @@ myApp.factory('Modules', function () {
             "title": "The Life Aquatic: Machines and the Making of the Ocean",
             "description": "Oceans cover most of the globe. Yet once we venture from  the   shore, our  understanding  of  the  marine environment  is  necessarily  mediated  by  technology, from  the  plumb  line  used  by  sailors  for  millennia  to measure  the  water’s  depth,  to  the  latest  satellite imaging  tracking  ocean  currents  in  real  time.  This module    examines    how  different  “machines,”  or technologies  have  produced  understandings  of  the ocean across history, and places these technologies in their social, cultural, economic, and political contexts. The   result   is   to   reveal   the   complex   and   evolving interconnections that link technology, and society and our understanding of the natural world.",
             "moduleCredit": "4",
-            "department": "Southeast Asian Studies",
+            "department": "Biological Sciences",
             "faculty": "Arts and Social Science",
             "pillar": "GEH",
             "workload": [
@@ -1479,7 +1479,7 @@ myApp.factory('Modules', function () {
             "title": "Art in Asia: Through Media, Style, Space and Time",
             "description": "This  course  provides  a  thematic  introduction  to  the major religious, traditional and decorative arts of Asia. Through a study of important architectural monuments, key works of art, materials and processes, students  will  explore  the  shared  cultures,  aesthetics and artistic achievements of India, China and Southeast Asia  and  how  the  visual  arts  of  Asia  were  shaped  by religious,   imperial,   political,   economic,   and   social climates from its early civilizations to the modern era.",
             "moduleCredit": "4",
-            "department": "Chinese Studies",
+            "department": "Arts",
             "faculty": "Arts and Social Science",
             "pillar": "GEH",
             "workload": [
@@ -2851,7 +2851,7 @@ myApp.factory('Modules', function () {
             "title": "Home",
             "description": "Few words in the English language (or any language) are as evocative and emotionally‐charged as “home.” But how do we determine what we call home, and why should we take “home” seriously? This module explores the political, social, economic, and cultural aspects of the complex idea of home. Major topics include: sense of place, home technologies and design, gender and housework, home and travel, globalisation, nationalism, homelessness, exile, and representations of home. Students will complete the module with a new appreciation for the complexity of the places – house, neighborhood, nation, planet – they call home.",
             "moduleCredit": "4",
-            "department": "Japanese Studies",
+            "department": "English Language and Literature",
             "faculty": "Arts and Social Science",
             "pillar": "GET",
             "workload": [
@@ -3033,7 +3033,7 @@ myApp.factory('Modules', function () {
             "title": "The Art of Science, the Science of Art",
             "description": "It often seems the worlds of science and art are unrelated: Logical truth versus emotional imagination. Still, science and art have much in common. Science has caused paradigm shifts in artistic expression while art is used for engineering design and communication of scientific knowledge. In this module, students will be introduced to the use of materials and technology related to architecture, sculpture, painting, photography and imaging. The use of technology for dating and attribution of objects of art  as well as the use of visual art for scientific illustration and design will be examined. Knowledge of the scientific principles of various forms of visual art will also be explored. The module aims at the development of some artistic skills for illustrations of scientific concepts and engineering designs. This module will help students to better express their thoughts through artistic expression and appreciate visual art.",
             "moduleCredit": "4",
-            "department": "Physics",
+            "department": "Arts",
             "faculty": "Science",
             "pillar": "GET",
 
@@ -3056,7 +3056,7 @@ myApp.factory('Modules', function () {
             "title": "Understanding the Changing Global Economic Landscape",
             "description": "Why and how have things changed and moved so fast? Why and how has the global economy become more open and integrated? This module discusses the increasing connections and mobilities of goods (like grains, oil, cars, appliances, parts & components), services (like banking, education, tourism), money and finance, labour, technology, ideas and information. It discusses their trends and patterns and critically examines the role of various factors such as international and regional institutions, media and ICT, infrastructure and distribution networks, state intervention, and private sector involvement. It also assesses the social, economic, political and environmental impacts of increasing interconnectedness and mobilities.",
             "moduleCredit": "4",
-            "department": "Southeast Asian Studies",
+            "department": "Economics",
             "faculty": "Arts and Social Science",
             "pillar": "GET",
             "workload": [
@@ -3088,7 +3088,7 @@ myApp.factory('Modules', function () {
             "title": "Understanding The Changing Global Economic Landscape",
             "description": "Why and how have things changed and moved so fast? Why and how has the global economy become more open and integrated? This module discusses the increasing connections and mobilities of goods (like grains, oil, cars, appliances, parts & components), services (like banking, education, tourism), money and finance, labour, technology, ideas and information. It discusses their trends and patterns and critically examines the role of various factors such as international and regional institutions, media and ICT, infrastructure and distribution networks, state intervention, and private sector involvement. It also assesses the social, economic, political and environmental impacts of increasing interconnectedness and mobilities.",
             "moduleCredit": "4",
-            "department": "Southeast Asian Studies",
+            "department": "Economics",
             "faculty": "Cont and Lifelong Education",
             "pillar": "GET",
             "workload": [
@@ -3218,7 +3218,7 @@ myApp.factory('Modules', function () {
             "title": "Critical Thinking And Writing",
             "description": "The challenges of a global engineer increasingly call upon engineers to think critically and communicate effectively to undertake developmental leadership. This course aims to develop and practise students’ critical thinking and writing skills through analysing case studies in engineering leadership, constructing complex engineering-related problems and solutions, presenting arguments effectively and reflecting on personal leadership development. Relevance to engineering practice is emphasized with references to grounded theories of engineering leadership (Colcleugh, 2013; Rottman, Sacks & Reeve, 2015) and the seven missing basics of engineering education (Goldberg, 2009).",
             "moduleCredit": "4",
-            "department": "English Language and Literature",
+            "department": "Critical Thinking",
             "faculty": "NUS",
             "pillar": "GET",
             "workload": [
@@ -3511,7 +3511,7 @@ myApp.factory('Modules', function () {
             "title": "Digital Humanities in Arts Research",
             "description": "Digital technologies let us do humanities differently, using interactive publishing, machine-driven analysis, media-rich platforms, online archives and crowd-sourced databases. How are these technologies changing the humanities? This module invites students from across the university to consider this question through a problem-based approach. In each session, the students will learn to use and critically evaluate digital tools and platforms. Reflecting the multiple approaches within the digital humanities, teaching combines seminar discussions of topics with hands-on training in web programming, text encoding and video processing techniques.",
             "moduleCredit": "4",
-            "department": "English Language and Literature",
+            "department": "Computing",
             "pillar": "GET",
             "faculty": "Arts and Social Science",
             "workload": [
@@ -3604,7 +3604,7 @@ myApp.factory('Modules', function () {
             "title": "Communication and Critical Thinking for Community Leadership",
             "description": "This critical thinking and communication module provides an opportunity for students to explore community leadership within an interdisciplinary environment. In particular, through understanding the constructivist theory of communication (Burleson, 2007) and Paul and Elder’s (2014) critical thinking framework, this module will facilitate the development of deliberative and active citizenry among students, regardless of the position they hold in the community. Students will apply these concepts individually to short case studies and reflections. They will then use these short assignments to conceptualize team projects relevant to their respective community settings.",
             "moduleCredit": "4",
-            "department": "Leadership",
+            "department": "Critical Thinking",
             "faculty": "NUS",
             "pillar": "GET",
             "workload": [
@@ -3946,7 +3946,7 @@ myApp.factory('Modules', function () {
             "title": "Thinking Strategically",
             "description": "In our interactions with family, friends, and strangers, each of us have own goals, which may or may not coincide with the other party’s goals. Should I compete or cooperate? Should I move first or last? Should I issue a threat or a promise? This module introduces concepts and insights from game theory. We will apply strategic thinking to examples drawn from business, politics, evolutionary biology, sports, and everyday social interactions. We will learn by playing games in the classroom, analyzing movie scenes, and dissecting current events.",
             "moduleCredit": "4",
-            "department": "NUS",
+            "department": "Critical Thinking",
             "faculty": "Arts and Social Science",
             "pillar": "GET",
             "projects": false,
