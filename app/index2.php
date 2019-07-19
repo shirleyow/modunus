@@ -150,7 +150,7 @@
                 $expected_grade = $_POST['expected_grade'];
                 date_default_timezone_set('Asia/Singapore');
                 $postingDate = date("Y-m-d");
-                $postingTime = date("H:i a");
+                $postingTime = date("H:i");
                 $comments = addslashes($_POST['comments']); //addslashes helps to add escape backslashes to single quotes/double quotes/NULL/backslash itself in the comments
                 $sql = "INSERT INTO data (module, upvote, downvote, postingDate, postingTime, faculty, manageable, easy, recommend, expected_grade, comments) 
                     VALUES ('$modCode', 0 , 0, '$postingDate', '$postingTime' , '$faculty','$manageable','$easy','$recommend','$expected_grade','$comments')";
