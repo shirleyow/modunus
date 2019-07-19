@@ -29,7 +29,11 @@
         echo '<div style="font-size: 30px; color:orangered; margin-left: 20px; margin-top:20px" class = "header">' . '<b>' . $_GET["code"] . ' - ' . $_GET["title"] . '</b>' . '</div>';
         echo '<button class="button" style = "float: right; margin-right: 20px" onclick="window.location.href = &quot;index.html&quot;">' . "<span>Back To All Modules</span></button>";
         echo '<div style="color: rgb(104, 104, 104); margin-left: 20px" class = "depSem">' . $_GET["depmt"] . " | Semester " . $_GET["semester"] . '</div>';
-        echo '<br><div style = "margin-left: 20px; font-size: 14px" class = "emojiParts">' . "&#128247 Webcasts " .  booleanFunc($_GET["webcasts"]) . "   &#128218 Exams " .  booleanFunc($_GET["exams"]) . "   &#128172 Tutorials " . booleanFunc($_GET["tutorials"]) . "   &#129309;&#127995; Group Projects " . booleanFunc($_GET["projects"]) . "   &#128175 Pass/Fail Option " . booleanFunc($_GET["su"]) . '</div>';
+        echo '<br><div style = "margin-left: 20px; font-size: 14px" class = "emojiParts">' . "<span style = 'border-radius: 25px; background: lightgreen; padding: 10px'>" . "	&#128249 Webcasts " .  booleanFunc($_GET["webcasts"]) . "</span>";
+        echo "<span style = 'border-radius: 25px; background: lightblue; padding: 10px'>" . "   &#128218 Exams " .  booleanFunc($_GET["exams"]) . "</span>";
+        echo "<span style = 'border-radius: 25px; background: lightsalmon; padding: 10px'>" . "   &#128172 Tutorials " . booleanFunc($_GET["tutorials"]) . "</span>";
+        echo "<span style = 'border-radius: 25px; background: lightpink; padding: 10px'>" . "   &#129309;&#127995; Group Projects " . booleanFunc($_GET["projects"]) . "</span>";
+        echo "<span style = 'border-radius: 25px; background: palegoldenrod; padding: 10px'>" . "   &#128522 Pass/Fail Option " . booleanFunc($_GET["su"]) . '</span></div>';
         echo '<br><div style = "margin-left: 20px; margin-right:20px; font-size: 15px;">' . $_GET["desc"] . '</div>';
     }
     ?>
@@ -181,11 +185,11 @@
         echo "<div>";
         echo "<div>" . '<span style = "color: navy; font-weight:bold">Faculty: </span>' . $row['faculty'] . "</div>";
         echo "<div>" . '<h5 style = "color: navy; font-weight:bold">Is the workload manageable? </h5>';
-        echo "<span style = 'font-size: 20px;color: gold;'>" . str_repeat("&#9733", $row['manageable']) . str_repeat("&#9734", 5 - $row['manageable']) . "</span></div>";
+        echo "<span style = 'font-size: 20px;color: gold;'>" . str_repeat("&#9733", $row['manageable']) . "</span>" . "<span style = 'font-size: 20px;color: lightgrey;'>" . str_repeat("&#9733", 5 - $row['manageable']) . "</span></div>";
         echo "<div>" . '<h5 style = "color: navy; font-weight:bold">Is the module\'s content easy? </h5>';
-        echo "<span style = 'font-size: 20px;color: gold;'>" . str_repeat("&#9733", $row['easy']) . str_repeat("&#9734", 5 - $row['easy']) . "</span></div>";
+        echo "<span style = 'font-size: 20px;color: gold;'>" . str_repeat("&#9733", $row['easy']) . "</span>" . "<span style = 'font-size: 20px;color: lightgrey;'>" .  str_repeat("&#9733", 5 - $row['easy']) . "</span></div>";
         echo "<div>" . '<h5 style = "color: navy; font-weight:bold;">Will you recommend this module to your friends? </h5>';
-        echo "<span style = 'font-size: 20px;color: gold;'>" . str_repeat("&#9733", $row['recommend']) . str_repeat("&#9734", 5 - $row['recommend']) . "</span></div>";
+        echo "<span style = 'font-size: 20px;color: gold;'>" . str_repeat("&#9733", $row['recommend']) . "</span>" . "<span style = 'font-size: 20px;color: lightgrey;'>" .  str_repeat("&#9733", 5 - $row['recommend']) . "</span></div>";
         echo "<div>" . '<span style = "color: navy; font-weight:bold;">Did you achieve your expected grade? </span>';
         echo ($row['expected_grade']=="Yes" ? "&#10003" : "&#10005") . "</div>";
         echo ($row['comments']!="" ? "<br><div class = 'well'>" . '<span style = "color: navy; font-weight:bold;">' . "Comments:" . '<br></span>' . "<span style = 'white-space: pre-wrap;'>" . $row['comments'] . "</span>" . "</pre>" .  "</div>" : "");
@@ -199,6 +203,6 @@
     ?>
 </body>
 <script src="./script2.js"></script>
-<script src="bundle.js"></script>
+<script src="bundle.js"></script> <!--remember to remove this if it doesn't work--> 
 
 </html>
