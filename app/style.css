@@ -70,3 +70,8 @@ input span {
 :checked + span {
   color: rgb(241, 56, 87);
 }
+
+button:focus, button:active, i:focus, i:active {
+  border: none;
+  outline: 0;
+}
