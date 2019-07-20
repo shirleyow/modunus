@@ -4375,6 +4375,18 @@ myApp.controller('myCtrl', function ($scope, Modules) {
             }
         }
     }
+    
+    $scope.filterCount = function () {
+        var count = 0;
+        for (var cat in $scope.filter) {
+            for (var key in $scope.filter[cat]) {
+                if ($scope.filter[cat][key] === true) {
+                    count ++;
+                }
+            }
+        }
+        return count;
+    }
 });
 
 myApp.filter('encodeURIComponent', function () {
