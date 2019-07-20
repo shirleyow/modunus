@@ -20,20 +20,20 @@
     function booleanFunc($val)
     {
         if ($val == 'true') {
-            return "&#10004";
+            return " <i class = 'fa fa-check'></i>";
         }
-        return "&#10008";
+        return " <i class = 'fa fa-times'></i>";
     }
     if (isset($_GET["code"]) && isset($_GET["desc"]) && isset($_GET["title"]) && isset($_GET["exams"]) && isset($_GET["tutorials"]) && isset($_GET["semester"]) && isset($_GET["su"]) && isset($_GET["projects"]) && isset($_GET["webcasts"])) {
         echo '<title>' . $_GET["code"] . ' - ' . $_GET["title"] . '</title>';
         echo '<div style="font-size: 30px; color:orangered; margin-left: 20px; margin-top:20px" class = "header">' . '<b>' . $_GET["code"] . ' - ' . $_GET["title"] . '</b>' . '</div>';
         echo '<button class="button" style = "float: right; margin-right: 20px" onclick="window.location.href = &quot;index.html&quot;">' . "<span>Back To All Modules</span></button>";
         echo '<div style="color: rgb(104, 104, 104); margin-left: 20px" class = "depSem">' . $_GET["depmt"] . " | Semester " . $_GET["semester"] . '</div>';
-        echo '<br><div style = "margin-left: 20px; font-size: 14px" class = "emojiParts">' . "<span style = 'border-radius: 25px; background: lightgreen; padding: 10px'>" . "	&#128249 Webcasts " .  booleanFunc($_GET["webcasts"]) . "</span>";
-        echo "<span style = 'border-radius: 25px; background: lightblue; padding: 10px'>" . "   &#128218 Exams " .  booleanFunc($_GET["exams"]) . "</span>";
-        echo "<span style = 'border-radius: 25px; background: lightsalmon; padding: 10px'>" . "   &#128172 Tutorials " . booleanFunc($_GET["tutorials"]) . "</span>";
-        echo "<span style = 'border-radius: 25px; background: lightpink; padding: 10px'>" . "   &#129309;&#127995; Group Projects " . booleanFunc($_GET["projects"]) . "</span>";
-        echo "<span style = 'border-radius: 25px; background: palegoldenrod; padding: 10px'>" . "   &#128522 Pass/Fail Option " . booleanFunc($_GET["su"]) . '</span></div>';
+        echo '<br><div style = "margin-left: 20px; font-size: 14px" class = "emojiParts">' . "<span style = 'border-radius: 25px; background: lightgreen; padding: 10px'>" . "	<i class = 'fa fa-video'></i> Webcasts " .  booleanFunc($_GET["webcasts"]) . "</span>";
+        echo "<span style = 'border-radius: 25px; background: lightblue; padding: 10px'>" . "   <i class = 'fa fa-book'></i> Exams " .  booleanFunc($_GET["exams"]) . "</span>";
+        echo "<span style = 'border-radius: 25px; background: lightsalmon; padding: 10px'>" . "   <i class = 'fa fa-comments'></i> Tutorials " . booleanFunc($_GET["tutorials"]) . "</span>";
+        echo "<span style = 'border-radius: 25px; background: lightpink; padding: 10px'>" . "   <i class = 'fa fa-users'></i> Group Projects " . booleanFunc($_GET["projects"]) . "</span>";
+        echo "<span style = 'border-radius: 25px; background: palegoldenrod; padding: 10px'>" . "   <i class = 'far fa-smile'></i> Pass/Fail Option " . booleanFunc($_GET["su"]) . '</span></div>';
         echo '<br><div style = "margin-left: 20px; margin-right:20px; font-size: 15px;">' . $_GET["desc"] . '</div>';
     }
     ?>
@@ -125,7 +125,7 @@
             <h3 style="color: navy">Comments</h3>
             <br>
             <textarea class="form-control" rows="5" name="comments" placeholder="Write something here... You can include the name of your lecturer/tutor and the sem that you took this module in."></textarea><br><br>
-            <button type="submit" name="submit" style = "margin-bottom: 30px;">Submit</button>
+            <button type="submit" name="submit" style="margin-bottom: 30px;">Submit</button>
         </div>
     </form>
     <?php
@@ -154,7 +154,7 @@
                 $expected_grade = $_POST['expected_grade'];
                 date_default_timezone_set('Asia/Singapore');
                 $postingDate = date("Y-m-d");
-                $postingTime = date("H:i");
+                $postingTime = date("H:i:s");
                 $comments = addslashes($_POST['comments']); //addslashes helps to add escape backslashes to single quotes/double quotes/NULL/backslash itself in the comments
                 $sql = "INSERT INTO data (module, upvote, downvote, postingDate, postingTime, faculty, manageable, easy, recommend, expected_grade, comments) 
                     VALUES ('$modCode', 0 , 0, '$postingDate', '$postingTime' , '$faculty','$manageable','$easy','$recommend','$expected_grade','$comments')";
@@ -168,41 +168,45 @@
         }
     }
 
-    /*function upvoting($currentNum, $code) {
-        global $conn;
-        $num = $currentNum + 1;
-        $updatequery = mysqli_query($conn, "UPDATE `data` SET `upvote` = $num WHERE `module` ='". $code. "'");
-    }*/
-
-    $result = mysqli_query($conn, "SELECT * FROM `data` WHERE `module` ='". $modCode. "'");
+    $result = mysqli_query($conn, "SELECT * FROM `data` WHERE `module` ='" . $modCode . "'");
     if (!$result) {
         printf("Error: %s\n", mysqli_error($conn));
         exit();
     }
-    while($row = mysqli_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         echo "<div class = 'well' style = 'margin-left: 20px; margin-right: 20px;'>";
         echo "<h5>" . "Comment " . $index . ": Posted on " . $row['postingDate'] . "</h5>";
         echo "<div>";
-        echo "<div>" . '<span style = "color: navy; font-weight:bold">Faculty: </span>' . $row['faculty'] . "</div>";
-        echo "<div>" . '<h5 style = "color: navy; font-weight:bold">Is the workload manageable? </h5>';
+        echo "<div>" . '<span style = "color: navy;">Faculty: </span>' . $row['faculty'] . "</div>";
+        echo "<div>" . '<h5 style = "color: navy;">Is the workload manageable? </h5>';
         echo "<span style = 'font-size: 20px;color: gold;'>" . str_repeat("&#9733", $row['manageable']) . "</span>" . "<span style = 'font-size: 20px;color: lightgrey;'>" . str_repeat("&#9733", 5 - $row['manageable']) . "</span></div>";
-        echo "<div>" . '<h5 style = "color: navy; font-weight:bold">Is the module\'s content easy? </h5>';
+        echo "<div>" . '<h5 style = "color: navy;">Is the module\'s content easy? </h5>';
         echo "<span style = 'font-size: 20px;color: gold;'>" . str_repeat("&#9733", $row['easy']) . "</span>" . "<span style = 'font-size: 20px;color: lightgrey;'>" .  str_repeat("&#9733", 5 - $row['easy']) . "</span></div>";
-        echo "<div>" . '<h5 style = "color: navy; font-weight:bold;">Will you recommend this module to your friends? </h5>';
+        echo "<div>" . '<h5 style = "color: navy;">Will you recommend this module to your friends? </h5>';
         echo "<span style = 'font-size: 20px;color: gold;'>" . str_repeat("&#9733", $row['recommend']) . "</span>" . "<span style = 'font-size: 20px;color: lightgrey;'>" .  str_repeat("&#9733", 5 - $row['recommend']) . "</span></div>";
-        echo "<div>" . '<span style = "color: navy; font-weight:bold;">Did you achieve your expected grade? </span>';
-        echo ($row['expected_grade']=="Yes" ? "&#10003" : "&#10005") . "</div>";
-        echo ($row['comments']!="" ? "<br><div class = 'well'>" . '<span style = "color: navy; font-weight:bold;">' . "Comments:" . '<br></span>' . "<span style = 'white-space: pre-wrap;'>" . $row['comments'] . "</span>" . "</pre>" .  "</div>" : "");
+        echo "<div>" . '<span style = "color: navy;">Did you achieve your expected grade? </span>';
+        echo ($row['expected_grade'] == "Yes" ? "&#10003" : "&#10005") . "</div>";
+        echo ($row['comments'] != "" ? "<br><div class = 'well'>" . '<h5 style = "color: navy;">' . "Comments:" . '</h5>' . "<span style = 'white-space: pre-wrap;'>" . $row['comments'] . "</span>" . "</pre>" .  "</div>" : "");
         echo "</div><br>";
-        echo $row['upvote'] . ' ' . '<button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Upvote" style = "border:none; color: green;padding-top: 3px;" id = "upvote" onclick = "upvoting(' . $row["upvote"] . "," . "'" . $row["module"] . "'" . "," . "'" . $row["postingDate"] . "'" . "," . "'" . $row["postingTime"] . "'" . ')"' . '>&#8679</button>';
-        echo " " . $row['downvote'] . " "  . '<button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Downvote" style = "border:none; color: red;padding-top: 3px;" id = "downvote">&#8681</button>';
+        echo "<form method = 'POST'>" . $row['upvote'] . ' ' . '<button name = "upvote" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Upvote" style = "border:none; color: green;padding-top: 3px;" id = "upvote" value = "' . $row['module'] . '"' . '><i class = "fa fa-chevron-up"></i></button>';
+        echo " " . $row['downvote'] . " "  . '<button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Downvote" style = "border:none; color: red;padding-top: 3px;" id = "downvote"><i class = "fa fa-chevron-down"></i></button>';
         echo "</div>";
-        $index ++;
+        $index++;
+        if (isset($_POST['upvote'])) {
+            $sql2 = "UPDATE `data` SET `upvote`= `upvote`+1 WHERE `module` ='" . $_POST['upvote'] . "'";
+            if ($conn->query($sql2)) {
+                unset($_POST['upvote']);
+            } else {
+                echo "Error: " . $sql2 . " 
+                        " . $conn->error;
+            }
+        }
     }
+
     $conn->close();
     ?>
 </body>
-<script src="./script2.js"></script>
-<script src="bundle.js"></script> <!--remember to remove this if it doesn't work--> 
+<!--<script src="./script2.js"></script>
+<script src="bundle.js"></script>-->
 
 </html>
