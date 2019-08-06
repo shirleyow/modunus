@@ -54,3 +54,53 @@
     opacity: 1;
     right: 0;
   }
+
+  #revForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+  }
+
+  .invalid {
+    background-color: #ffdddd;
+  }
+  
+  .tab {
+    display: none;
+  }
+  
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none; 
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  .step.active {
+    opacity: 1;
+  }
+  
+  .step.finish {
+    background-color: navy;
+  }
+
+  .controls {
+    font-size: 20px;
+    cursor: pointer;
+    color: mediumaquamarine;
+  }
+
+  .controls:hover {
+    color: green;
+  }
+
+  .button:focus, .button:active, i:focus, i:active {
+    border: none;
+    outline: 0;
+  }
