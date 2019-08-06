@@ -8,11 +8,6 @@ h1 {
   padding: 20px 0 10px 20px;
 }
 
-.box {
-  float:left;
-  padding: 20px;
-}
-
 .mat-sidenav {
   position: left;
 }
@@ -30,7 +25,6 @@ button {
   margin: 0px;
   height: 100%;
   position: fixed;
-  z-index: 1;
   top: 0px;
   left: 0;
   background-color: rgb(224, 223, 223);
@@ -71,7 +65,7 @@ input span {
   color: rgb(241, 56, 87);
 }
 
-button:focus, button:active, i:focus, i:active {
+button:focus, button:active, i:focus, i:active, a:focus, a:active {
   border: none;
   outline: 0;
 }
