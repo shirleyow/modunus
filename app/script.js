@@ -4009,8 +4009,8 @@ myApp.factory('Modules', function () {
 
 myApp.controller('myCtrl', function ($scope, Modules) {
     $scope.data = Modules;
-    $scope.filter = {};
     $scope.categories = ['pillar', 'semester', 'department', 'webcasts', 'exams', 'tutorials', 'projects'];
+    $scope.filter = {};
 
     $scope.removeTask = function (taskId) {
         alert("Task Id is " + taskId);
@@ -4168,16 +4168,6 @@ myApp.controller('myCtrl', function ($scope, Modules) {
         return false;
     }
 
-    $scope.filterNames = function (val) {
-        if (val === true) {
-            return "Yes";
-        } else if (val === false) {
-            return "No";
-        } else {
-            return val;
-        }
-    }
-
     $scope.scroll = function () {
         window.scrollTo(0, 0);
     }
@@ -4262,7 +4252,7 @@ myApp.controller('myCtrl', function ($scope, Modules) {
                         } else continue;
                     }
                     if ($scope.searchText) {
-                        if ($scope.data[item][moduleCode].indexOf($scope.searchText) === -1 && $scope.data[item][title].indexOf($scope.searchText) === -1) {
+                        if (($scope.data[item]["moduleCode"].toLowerCase()).indexOf($scope.searchText.toLowerCase()) === -1 && ($scope.data[item]["title"].toLowerCase()).indexOf($scope.searchText.toLowerCase()) === -1) {
                             bool = false;
                         }
                     }
@@ -4311,7 +4301,7 @@ myApp.controller('myCtrl', function ($scope, Modules) {
                         }
                     }
                     if ($scope.searchText) {
-                        if ($scope.data[item][moduleCode].indexOf($scope.searchText) === -1 && $scope.data[item][title].indexOf($scope.searchText) === -1) {
+                        if (($scope.data[item]["moduleCode"].toLowerCase()).indexOf($scope.searchText.toLowerCase()) === -1 && ($scope.data[item]["title"].toLowerCase()).indexOf($scope.searchText.toLowerCase()) === -1) {
                             bool = false;
                         }
                     }
@@ -4361,7 +4351,7 @@ myApp.controller('myCtrl', function ($scope, Modules) {
                         }
                     }
                     if ($scope.searchText) {
-                        if ($scope.data[item][moduleCode].indexOf($scope.searchText) === -1 && $scope.data[item][title].indexOf($scope.searchText) === -1) {
+                        if (($scope.data[item]["moduleCode"].toLowerCase()).indexOf($scope.searchText.toLowerCase()) === -1 && ($scope.data[item]["title"].toLowerCase()).indexOf($scope.searchText.toLowerCase()) === -1) {
                             bool = false;
                         }
                     }
@@ -4375,17 +4365,68 @@ myApp.controller('myCtrl', function ($scope, Modules) {
             }
         }
     }
-    
+
     $scope.filterCount = function () {
         var count = 0;
         for (var cat in $scope.filter) {
             for (var key in $scope.filter[cat]) {
                 if ($scope.filter[cat][key] === true) {
-                    count ++;
+                    count++;
                 }
             }
         }
         return count;
+    }
+
+    if (localStorage.getItem("bookmarks") === null) {
+        $scope.bookmarks = [];
+    } else {
+        $scope.bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+    }
+
+    $scope.bookmark = function (code) {
+        if ($scope.bookmarks.indexOf(code) == -1) {
+            $scope.bookmarks.push(code);
+            localStorage.setItem("bookmarks", JSON.stringify($scope.bookmarks));
+        } else {
+            $scope.bookmarks.splice($scope.bookmarks.indexOf(code), 1);
+            localStorage.setItem("bookmarks", JSON.stringify($scope.bookmarks));
+        }
+    }
+
+    $scope.checkBookmark = function (code) {
+        if ($scope.bookmarks.indexOf(code) == -1) {
+            return false;
+        } else return true;
+    }
+    
+    $scope.clearBookmarks = function () {
+        $scope.bookmarks = [];
+    }
+
+    $scope.removeBookmark = function (code) {
+        $scope.bookmarks.splice($scope.bookmarks.indexOf(code), 1);
+        localStorage.setItem("bookmarks", JSON.stringify($scope.bookmarks));
+    }
+
+    $scope.removeFilter = function (cat, value) {
+        $scope.filter[cat][value] = false;
+    }
+
+    $scope.booleanFunc = function (cat, val) {
+        if (cat == "pass/fail") {
+            if (val == "false") {
+                return "Yes";
+            } else {
+                return "No";
+            }
+        }
+        if (val === "false" || val === false) {
+            return "No";
+        } else if (val === "true" || val === true) {
+            return "Yes";
+        }
+        else return val;
     }
 });
 
