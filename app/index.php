@@ -4,6 +4,7 @@
 <head>
   <link rel="shortcut icon" href="#">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
   <title>ModuNUS</title>
 
   <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -91,18 +92,18 @@
     }
 
     #myBtn:hover,
-    #myBtn2:hover {
+    #myBtn2:hover,
+    #myBtn:focus,
+    #myBtn2:focus,
+    #myBtn:active,
+    #myBtn2:active {
       color: lightslategray;
       cursor: pointer;
     }
 
     @media screen and (max-width: 1207px) {
-      .changed {
-        font-size: 18px;
-      }
-
-      body {
-        font-size: 20px;
+      .close {
+        display: none;
       }
 
       .filter {
@@ -117,9 +118,10 @@
         display: none;
       }
 
-      .left {
+      .column.left {
         width: 100%;
         padding-right: 10px;
+        padding-left: 25px;
         border-right: none;
       }
 
@@ -130,10 +132,22 @@
       .float {
         display: block;
         position: fixed;
-        width: 110px;
-        height: 110px;
-        bottom: 60px;
-        right: 80px;
+        width: 60px;
+        height: 60px;
+        bottom: 15px;
+        right: 15px;
+        background-color: #0C9;
+        color: #FFF;
+        border-radius: 60px;
+        text-align: center;
+        box-shadow: 3px 3px 4px #999;
+      }
+
+      .float1 {
+        display: block;
+        width: 60px;
+        height: 60px;
+        float: right;
         background-color: #0C9;
         color: #FFF;
         border-radius: 60px;
@@ -144,13 +158,7 @@
       .my-float {
         color: #FFF;
         display: inline-block;
-        margin: 35px;
-      }
-
-      .my-float2 {
-        color: #FFF;
-        display: inline-block;
-        margin: 7px;
+        margin: 21px;
       }
 
       .modal-dialog {
@@ -165,20 +173,48 @@
         min-height: 100%;
         border-radius: 0;
       }
+
+      .navbar-toggle {
+        background-color: black;
+      }
+
+      .margin {
+        margin-left: 10px;
+      }
+
+      #txt-search {
+        margin: 7px;
+      }
+
+      h4 b {
+        display: none;
+      }
+
+      .changed.margin {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 
 <body>
   <a href="#" data-toggle='modal' data-target='#modalNavigation' class="float">
-    <i class="fa fa-filter my-float" style="font-size: 40px"></i>
+    <i class="fa fa-filter my-float" style="font-size: 20px"></i>
   </a>
   <nav class='navbar navbar-inverse navbar-fixed-top'>
-    <a class='navbar-brand' href='index.php'><span style="font-family: 'Maven Pro', 'Comfortaa'; font-size: 25px">moduNUS</a>
-    <ul class="nav navbar-nav">
-      <li><a href="#" id="myBtn" data-toggle="modal" data-target="#myModal">About</a></li>
-      <li><a href="#" id="myBtn2" data-toggle="modal" data-target="#modalContactForm">Report Bug</a></li>
-    </ul>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class='navbar-brand' href='index.php'><span style="font-family: 'Maven Pro', 'Comfortaa'; font-size: 25px">moduNUS</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#" id="myBtn" data-toggle="modal" data-target="#myModal">About</a></li>
+        <li><a href="#" id="myBtn2" data-toggle="modal" data-target="#modalContactForm">Report Bug</a></li>
+      </ul>
+    </div>
   </nav>
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -215,8 +251,8 @@
             using the tab in the navigation bar should you spot any.</p>
           <p>Thank you and we hope this will be helpful! :)</p>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="float" data-dismiss="modal"><i class="fa fa-times my-float2" style="font-size: 40px"></i></button>
+        <div class="modal-footer bottom">
+          <button type="button" class="float1" data-dismiss="modal"><i class="fa fa-times my-float" style="font-size: 20px"></i></button>
         </div>
       </div>
     </div>
@@ -258,7 +294,9 @@
           <div class="modal-footer d-flex justify-content-center">
             <button class="btn btn-unique" type="submit">Send <i class="fa fa-paper-plane"></i></button>
           </div>
-          <button type="button" class="float" data-dismiss="modal"><i class="fa fa-times my-float2" style="font-size: 40px"></i></button>
+          <div class="modal-footer bottom">
+            <button type="button" class="float1" data-dismiss="modal"><i class="fa fa-times my-float" style="font-size: 18px"></i></button>
+          </div>
         </form>
       </div>
     </div>
@@ -267,26 +305,23 @@
   <main ng-app="myApp" ng-cloak>
     <section ng-controller="myCtrl">
       <div class='modal fade' id='modalNavigation' role='dialog' tabindex='-1'>
-        <button aria-label='Close' class='close' data-dismiss='modal' type='button'>
-        </button>
         <div class='modal-dialog' id="modalNavigation" role="dialog">
           <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Filters</h4>
               </div>
               <div class="modal-body">
-                <div style="font-size: 18px">{{filterCount()}} filter(s) selected.<button ng-click="clearFilters()" style="font-size: 18px; color: green; float: right;">Clear all filters</button></div>
+                <div>{{filterCount()}} filter(s) selected.<button ng-click="clearFilters()" style="color: green; float: right;">Clear all filters</button></div>
                 <hr id="thehr" />
-                <menu class="filter-box" ng-repeat="cat in categories" ng-init="filter[cat]={}">
+                <menu class="filter-box" ng-repeat="cat in categories">
                   <button ng-click="toggle = !toggle" ng-init="toggle = false" style="width: 93%; text-align: left">{{capitalise(cat)}}</button><i ng-click="toggle = !toggle" ng-class="toggle ? 'fa fa-angle-down' : 'fa fa-angle-right'" style="float: right"></i>
                   <div class='hr'>
                     <div ng-show="toggle">
                       <md-item ng-repeat="value in getItems(cat, data)" ng-hide="numFiltered(cat,value) === 0">
                         <form class="checkbox">
-                          <label><input type="checkbox" ng-model="filter[cat][value]" ng-change="backToFirstPage()">
+                          <label><input type="checkbox" ng-model="filter[cat][value]" ng-change="backToFirstPage(); seshFilter()">
                             <span class="underline_hover disable-select">{{booleanFunc(cat, value)}}
                               ({{numFiltered(cat, value)}})</span>
                           </label>
@@ -296,14 +331,14 @@
                   </div>
                   <hr>
                 </menu>
-                <menu class="filter-box" ng-init="filter['pass/fail']={}">
+                <menu class="filter-box">
                   <button ng-click="toggle2 = !toggle2" ng-init="toggle2 = false" style="width: 93%; text-align: left">{{capitalise('pass/fail')}}</button>
                   <i ng-click="toggle2 = !toggle2" ng-class="toggle2 ? 'fa fa-angle-down' : 'fa fa-angle-right'" style="float: right"></i>
                   <div class='hr'>
                     <div ng-show="toggle2">
                       <md-item ng-repeat="value in getItems('pass/fail', data)" ng-hide="numFiltered('pass/fail',value) === 0">
                         <form class="checkbox">
-                          <label><input type="checkbox" ng-model="filter['pass/fail'][value]" ng-change="backToFirstPage()">
+                          <label><input type="checkbox" ng-model="filter['pass/fail'][value]" ng-change="backToFirstPage(); seshFilter()">
                             <span class="underline_hover disable-select">{{value === true ? "No" : "Yes"}}
                               ({{numFiltered("pass/fail", value)}})</span>
                           </label>
@@ -314,7 +349,7 @@
                 </menu>
               </div>
               <div class="modal-footer">
-              <button type="button" class="float" data-dismiss="modal"><i class="fa fa-times my-float2" style="font-size: 40px"></i></button>
+                <button type="button" class="float1" data-dismiss="modal"><i class="fa fa-times my-float" style="font-size: 18px"></i></button>
               </div>
             </div>
           </div>
@@ -322,15 +357,15 @@
       </div>
       <div class="filter">
         <h4><b>Filters</b><br></h4>
-        <div class="changed">{{filterCount()}} filter(s) selected.<button ng-click="clearFilters()" class="changed" style="color: green; float: right;">Clear all filters</button></div>
+        <div class="changed">{{filterCount()}} filter(s) selected.<button ng-click="clearFilters()" style="color: green; float: right;" class="changed">Clear all filters</button></div>
         <hr id="thehr" />
-        <menu class="filter-box" ng-repeat="cat in categories" ng-init="filter[cat]={}">
+        <menu class="filter-box" ng-repeat="cat in categories">
           <button ng-click="toggle = !toggle" ng-init="toggle = false" style="width: 93%; text-align: left">{{capitalise(cat)}}</button><i ng-click="toggle = !toggle" ng-class="toggle ? 'fa fa-angle-down' : 'fa fa-angle-right'" style="float: right"></i>
           <div class='hr'>
             <div ng-show="toggle">
               <md-item ng-repeat="value in getItems(cat, data)" ng-hide="numFiltered(cat,value) === 0">
                 <form class="checkbox">
-                  <label><input type="checkbox" ng-model="filter[cat][value]" ng-change="backToFirstPage()">
+                  <label><input type="checkbox" ng-model="filter[cat][value]" ng-change="backToFirstPage(); seshFilter()">
                     <span class="underline_hover disable-select">{{booleanFunc(cat, value)}}
                       ({{numFiltered(cat, value)}})</span>
                   </label>
@@ -340,13 +375,13 @@
           </div>
           <hr>
         </menu>
-        <menu class="filter-box" ng-init="filter['pass/fail']={}">
+        <menu class="filter-box">
           <button ng-click="toggle2 = !toggle2" ng-init="toggle2 = false" style="width: 93%; text-align: left">{{capitalise('pass/fail')}}</button><i ng-click="toggle2 = !toggle2" ng-class="toggle2 ? 'fa fa-angle-down' : 'fa fa-angle-right'" style="float: right"></i>
           <div class='hr'>
             <div ng-show="toggle2">
               <md-item ng-repeat="value in getItems('pass/fail', data)" ng-hide="numFiltered('pass/fail',value) === 0">
                 <form class="checkbox">
-                  <label><input type="checkbox" ng-model="filter['pass/fail'][value]" ng-change="backToFirstPage()">
+                  <label><input type="checkbox" ng-model="filter['pass/fail'][value]" ng-change="backToFirstPage(); seshFilter()">
                     <span class="underline_hover disable-select">{{value === true ? "No" : "Yes"}}
                       ({{numFiltered("pass/fail", value)}})</span>
                   </label>
@@ -365,46 +400,45 @@
             </div>
           </form>
         </div><br>
-        {{filtered.length | number}} module(s) found.<br><span ng-hide="filtered.length === 0">Displaying
-          {{rangeCount(page)}} - {{rangeCountEnd(filtered.length)}}<span style="text-align: right; float:right">Page
+        <span class="margin">{{filtered.length | number}} module(s) found.</span><br><span ng-hide="filtered.length === 0"><span class="margin">Displaying
+            {{rangeCount(page)}} - {{rangeCountEnd(filtered.length)}}</span><span style="text-align: right; float:right">Page
             {{page}} of {{totalPageNum(filtered.length / 10)}}</span></span>
         <br><br>
-        <span class="changed" ng-hide="filterCount() == 0">Filter(s) <span style="color: green;"><i class="fa fa-eraser" title="Clear All" ng-click="clearFilters()"></i></span> :
-          <span ng-repeat="(cat, value) in filter">
-            <span ng-repeat="(key, val) in value">
+        <span class="changed margin" ng-hide="filterCount() == 0">Filter(s) <span style="color: green;"><i class="fa fa-eraser" title="Clear All" ng-click="clearFilters()"></i></span> :
+          <span ng-repeat="cat in allCategories">
+            <span ng-repeat="(key, val) in filter[cat]">
               <span ng-show="filter[cat][key] == true">{{capitalise(cat)}} - <span style="color: orangered">{{booleanFunc(cat, key)}}</span> <i class="far fa-times-circle" title="Remove" ng-click="removeFilter(cat, key)"></i>
-              </span></span></span>
+              </span></span></span></span>
         </span>
-        <div class="changed" ng-hide="bookmarks.length === 0">Bookmark(s) <span style="color: green;"><i class="fa fa-eraser" title="Clear All" ng-click="clearBookmarks()"></i></span> :
-          <span ng-repeat="bookmark in bookmarks">
-            {{bookmark}} <i class="far fa-times-circle" title="Remove" ng-click="removeBookmark(bookmark)"></i>
+        <div class="changed margin" ng-hide="isEmpty(bookmarks)">Bookmark(s) <span style="color: green;"><i class="fa fa-eraser" title="Clear All" ng-click="clearBookmarks()"></i></span> :
+          <span ng-repeat="(key, val) in bookmarks">
+            <a ng-href="module.php?code={{key}}&title={{val['title'] | encodeURIComponent}}&depmt={{val['dept']}}&desc={{val['desc'] | encodeURIComponent}}&webcasts={{val['webcasts']}}&exams={{val['exams']}}&tutorials={{val['tutorials']}}&projects={{val['projects']}}&su={{val['su']}}&semester={{val['semester']}}" style="color: black; text-decoration: underline">{{key}}</a> <i class="far fa-times-circle" title="Remove" ng-click="removeBookmark(key)"></i>
           </span>
-          <!--bookmark can be given a link to the module info page when url is shortened-->
         </div>
         <p class="moduleinfo" ng-repeat="item in filtered=(data | filter:filterByPropertiesMatchingAND | filter:search)">
           <div dir-paginate="item in filtered|itemsPerPage:10" current-page="page">
             <div class="row">
               <div class="column left">
                 <a ng-href="module.php?code={{item.moduleCode}}&title={{item.title | encodeURIComponent}}&depmt={{item.department}}&desc={{item.description | encodeURIComponent}}&webcasts={{item.webcasts}}&exams={{item.exams}}&tutorials={{item.tutorials}}&projects={{item.projects}}&su={{!item.hasOwnProperty('attributes')}}&semester={{semesterFunc(item.semesterData)}}" style="color: #ff4500" class="header">
-                  <b>{{item.moduleCode}} - {{item.title}}</b></a><i ng-class="checkBookmark(item.moduleCode) ? 'fa fa-bookmark bottom' : 'far fa-bookmark bottom'" title="Bookmark" style="float: right" ng-click="bookmark(item.moduleCode)"></i><br>
+                  <b>{{item.moduleCode}} - {{item.title}}</b></a><i ng-class="checkBookmark(item.moduleCode) ? 'fa fa-bookmark bottom' : 'far fa-bookmark bottom'" title="Bookmark" style="float: right" ng-click="bookmark(item.moduleCode, item.title, item.department, item.description, item.webcasts, item.exams, item.tutorials, item.projects, !item.hasOwnProperty('attributes'), semesterFunc(item.semesterData))"></i><br>
                 Category: {{item.department}}<br>
                 Semester(s): {{semesterFunc(item.semesterData)}} <br><br>
                 {{item.description}}
                 <br>
                 <br>
                 <div class="bottom">
-                  <span style='border-radius: 25px; background: lightgreen; padding: 10px'><i class='fa fa-video'></i>
+                  <span style='border-radius: 25px; background: lightgreen; padding: 10px; display: inline-block'><i class='fa fa-video'></i>
                     Webcasts
                     <i ng-class="item.webcasts ? 'fa fa-check' : 'fa fa-times'"></i></span>
-                  <span style='border-radius: 25px; background: lightblue; padding: 10px'><i class='fa fa-book'></i>
+                  <span style='border-radius: 25px; background: lightblue; padding: 10px; display: inline-block'><i class='fa fa-book'></i>
                     Exams
                     <i ng-class="item.exams ? 'fa fa-check' : 'fa fa-times'"></i></span>
-                  <span style='border-radius: 25px; background: lightsalmon; padding: 10px'><i class='fa fa-comments'></i> Tutorials
+                  <span style='border-radius: 25px; background: lightsalmon; padding: 10px; display: inline-block'><i class='fa fa-comments'></i> Tutorials
                     <i ng-class="item.tutorials ? 'fa fa-check' : 'fa fa-times'"></i></span>
-                  <span style='border-radius: 25px; background: lightpink; padding: 10px'><i class='fa fa-users'></i>
+                  <span style='border-radius: 25px; background: lightpink; padding: 10px; display: inline-block'><i class='fa fa-users'></i>
                     Group
                     Projects <i ng-class="item.projects ? 'fa fa-check' : 'fa fa-times'"></i></span>
-                  <br><br><span style='border-radius: 25px; background: palegoldenrod; padding: 10px'><i class='far fa-smile'></i> Pass/Fail Option
+                  <span style='border-radius: 25px; background: palegoldenrod; padding: 10px; display: inline-block'><i class='far fa-smile'></i> Pass/Fail Option
                     <i ng-class="!item.hasOwnProperty('attributes') ? 'fa fa-check' : 'fa fa-times'"></i></span>
                   <br><br>
                 </div>
@@ -412,7 +446,7 @@
                 <a href="https://ivle.nus.edu.sg/v1/lms/public/list_course_public.aspx?code={{item.moduleCode}}&title=&lecName=&acadyear=&semester=&ModTitleExact=Y&LecNameExact=N" target="_blank">IVLE</a> / <a href="https://www.google.com/search?q={{item.moduleCode}}" target="_blank">Google</a>
               </div>
               <div class="column right">
-                <i ng-class="checkBookmark(item.moduleCode) ? 'fa fa-bookmark' : 'far fa-bookmark'" title="Bookmark" style="float: right" ng-click="bookmark(item.moduleCode)"></i>
+                <i ng-class="checkBookmark(item.moduleCode) ? 'fa fa-bookmark' : 'far fa-bookmark'" title="Bookmark" style="float: right" ng-click="bookmark(item.moduleCode, item.title, item.department, item.description, item.webcasts, item.exams, item.tutorials, item.projects, !item.hasOwnProperty('attributes'), semesterFunc(item.semesterData))"></i>
                 <span style='border-radius: 25px; background: lightgreen; padding: 10px'><i class='fa fa-video'></i>
                   Webcasts
                   <i ng-class="item.webcasts ? 'fa fa-check' : 'fa fa-times'"></i></span><br><br>
