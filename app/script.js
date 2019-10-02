@@ -4010,37 +4010,13 @@ myApp.factory('Modules', function () {
 myApp.controller('myCtrl', function ($scope, Modules) {
     $scope.data = Modules;
     $scope.categories = ['pillar', 'semester', 'department', 'webcasts', 'exams', 'tutorials', 'projects'];
-    $scope.filter = {};
+    $scope.allCategories = ['pillar', 'semester', 'department', 'webcasts', 'exams', 'tutorials', 'projects', 'pass/fail'];
 
-    $scope.removeTask = function (taskId) {
-        alert("Task Id is " + taskId);
-    }
-
-    $scope.OpenSubSite = function (id) {
-
-        $scope.LoadItem(id);
-    }
-
-    $scope.getQueryVariable = function () {
-        var qs = new Querystring();
-        var v1 = qs.get("myVar1");
-        return v1;
-    }
-
-    $scope.clicked = function (id) {
-        window.location = 'contentPage.html?id=' + id; //this will change your browser location to the one specified.
-    }
-
-    $scope.addProps = function (obj, array) {
-        if (typeof array === 'undefined') {
-            return false;
-        }
-        return array.reduce(function (prev, item) {
-            if (typeof item[obj] === 'undefined') {
-                return prev;
-            }
-            return prev + parseFloat(item[obj]);
-        }, 0);
+    if (sessionStorage.getItem("filters") === null) {
+        $scope.filter = {};
+        sessionStorage.setItem("filters", JSON.stringify($scope.filter));
+    } else {
+        $scope.filter = JSON.parse(sessionStorage.getItem("filters"));
     }
 
     $scope.getItems = function (obj, array) {
@@ -4199,6 +4175,7 @@ myApp.controller('myCtrl', function ($scope, Modules) {
             }
         }
         $scope.backToFirstPage();
+        sessionStorage.setItem("filters", JSON.stringify($scope.filter));
     }
 
     $scope.allUnchecked = function (cat) { //cat here is the category
@@ -4379,38 +4356,44 @@ myApp.controller('myCtrl', function ($scope, Modules) {
     }
 
     if (localStorage.getItem("bookmarks") === null) {
-        $scope.bookmarks = [];
+        $scope.bookmarks = {};
     } else {
         $scope.bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
     }
 
-    $scope.bookmark = function (code) {
-        if ($scope.bookmarks.indexOf(code) == -1) {
-            $scope.bookmarks.push(code);
+    $scope.bookmark = function (code, title, dept, desc, webcasts, exams, tutorials, projects, su, semester) {
+        if (!$scope.bookmarks.hasOwnProperty(code)) {
+            $scope.bookmarks[code] = {"title": title, "dept": dept, "desc": desc, "webcasts": webcasts, "exams": exams, "tutorials": tutorials, "projects": projects, "su": su, "semester": semester};
             localStorage.setItem("bookmarks", JSON.stringify($scope.bookmarks));
         } else {
-            $scope.bookmarks.splice($scope.bookmarks.indexOf(code), 1);
+            delete $scope.bookmarks[code];
             localStorage.setItem("bookmarks", JSON.stringify($scope.bookmarks));
         }
     }
 
     $scope.checkBookmark = function (code) {
-        if ($scope.bookmarks.indexOf(code) == -1) {
+        if (!$scope.bookmarks.hasOwnProperty(code)) {
             return false;
-        } else return true;
+        } else {
+            return true;
+        }
     }
     
     $scope.clearBookmarks = function () {
-        $scope.bookmarks = [];
+        for (var key in $scope.bookmarks) {
+            delete $scope.bookmarks[key];
+        }
+        localStorage.setItem("bookmarks", JSON.stringify($scope.bookmarks));
     }
 
     $scope.removeBookmark = function (code) {
-        $scope.bookmarks.splice($scope.bookmarks.indexOf(code), 1);
+        delete $scope.bookmarks[code];
         localStorage.setItem("bookmarks", JSON.stringify($scope.bookmarks));
     }
 
     $scope.removeFilter = function (cat, value) {
         $scope.filter[cat][value] = false;
+        sessionStorage.setItem("filters", JSON.stringify($scope.filter));
     }
 
     $scope.booleanFunc = function (cat, val) {
@@ -4427,6 +4410,18 @@ myApp.controller('myCtrl', function ($scope, Modules) {
             return "Yes";
         }
         else return val;
+    }
+
+    $scope.isEmpty = function (obj) {
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
+
+    $scope.seshFilter = function () {
+        sessionStorage.setItem("filters", JSON.stringify($scope.filter));
     }
 });
 
