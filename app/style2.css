@@ -55,19 +55,15 @@
     right: 0;
   }
 
-  #revForm {
-    background-color: #ffffff;
-    margin: 100px auto;
-    padding: 40px;
-    width: 70%;
-    min-width: 300px;
-  }
-
   .invalid {
     background-color: #ffdddd;
   }
   
   .tab {
+    display: none;
+  }
+
+  .tab1 {
     display: none;
   }
   
@@ -97,6 +93,35 @@
   }
 
   .controls:hover {
+    color: green;
+  }
+
+  .step1 {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none; 
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  .step1.active {
+    opacity: 1;
+  }
+  
+  .step1.finish {
+    background-color: navy;
+  }
+
+  .controls1 {
+    font-size: 20px;
+    cursor: pointer;
+    color: mediumaquamarine;
+  }
+
+  .controls1:hover {
     color: green;
   }
 
