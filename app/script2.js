@@ -23,6 +23,7 @@ function scrollToTop() {
 
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
+showTab1(currentTab);
 
 function showTab(n) {
     // This function will display the specified tab of the form ...
@@ -41,6 +42,25 @@ function showTab(n) {
     }
     // ... and run a function that displays the correct step indicator:
     fixStepIndicator(n)
+}
+
+function showTab1(n) {
+    // This function will display the specified tab of the form ...
+    var x = document.getElementsByClassName("tab1");
+    x[n].style.display = "block";
+    // ... and fix the Previous/Next buttons:
+    if (n == 0) {
+        document.getElementById("prevBtn1").style.display = "none";
+    } else {
+        document.getElementById("prevBtn1").style.display = "inline";
+    }
+    if (n == (x.length - 1)) {
+        document.getElementById("nextBtn1").style.display = "none";
+    } else {
+        document.getElementById("nextBtn1").style.display = "inline";
+    }
+    // ... and run a function that displays the correct step indicator:
+    fixStepIndicator1(n)
 }
 
 function nextPrev(n) {
@@ -118,4 +138,81 @@ function fixStepIndicator(n) {
     }
     //... and adds the "active" class to the current step:
     x[n].className += " active";
+}
+
+function fixStepIndicator1(n) {
+    // This function removes the "active" class of all steps...
+    var i, x = document.getElementsByClassName("step1");
+    for (i = 0; i < x.length; i++) {
+        x[i].className = x[i].className.replace(" active", "");
+    }
+    //... and adds the "active" class to the current step:
+    x[n].className += " active";
+}
+
+function nextPrev1(n) {
+    // This function will figure out which tab to display
+    var x = document.getElementsByClassName("tab1");
+    // Exit the function if any field in the current tab is invalid:
+    if (n == 1 && !validateForm1()) return false;
+    // Hide the current tab:
+    x[currentTab].style.display = "none";
+    // Increase or decrease the current tab by 1:
+    currentTab = currentTab + n;
+    // if you have reached the end of the form... :
+    if (currentTab >= x.length) {
+        //...the form gets submitted:
+        return false;
+    }
+    // Otherwise, display the correct tab:
+    showTab1(currentTab);
+}
+
+function validateForm1() {
+    // This function deals with validation of the form fields
+    var x, y, i, valid = true;
+    x = document.getElementsByClassName("tab1");
+    y1 = x[currentTab].getElementsByTagName("input");
+    y2 = x[currentTab].getElementsByTagName("select");
+    // A loop that checks every input field in the current tab:
+    var isChecked = false;
+    for (i = 0; i < y1.length; i++) {
+        if (y1[i].checked == true) {
+            isChecked = true;
+            break;
+        }
+    }
+
+    if (isChecked == false) {
+        for (i = 0; i < y1.length; i++) {
+            y1[i].className += " invalid";
+            // and set the current valid status to false:
+            valid = false;
+        }
+    } else {
+        for (i = 0; i < y1.length; i++) {
+            if (y1[i].classList.contains("invalid")) {
+                y1[i].className -= "invalid";
+            }
+        }
+    }
+
+    for (i = 0; i < y2.length; i++) {
+        // If a field is empty...
+        if (y2[i].value == "---Please select an option---") {
+            // add an "invalid" class to the field:
+            y2[i].className += " invalid";
+            // and set the current valid status to false:
+            valid = false;
+        } else {
+            if (y2[i].classList.contains("invalid")) {
+                y2[i].className -= "invalid";
+            }
+        }
+    }
+    // If the valid status is true, mark the step as finished and valid:
+    if (valid) {
+        document.getElementsByClassName("step1")[currentTab].className += " finish";
+    }
+    return valid; // return the valid status
 }
