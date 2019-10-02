@@ -69,3 +69,7 @@ button:focus, button:active, i:focus, i:active, a:focus, a:active {
   border: none;
   outline: 0;
 }
+
+@-ms-viewport{
+  width: device-width;
+}
