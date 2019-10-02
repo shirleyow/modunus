@@ -74,8 +74,19 @@
         }
 
         @media screen and (max-width: 1207px) {
-            body, .star {
-                font-size: 20px;
+
+            body,
+            .star {
+                font-size: 25px;
+            }
+
+            .fa.fa-chevron-left.controls,
+            .fa.fa-chevron-right.controls {
+                font-size: 30px;
+            }
+
+            .fa.fa-chevron-left.controls {
+                margin-right: 10px;
             }
 
             .col-xs-6.col-md-4.well {
@@ -88,30 +99,36 @@
             }
 
             .emojiParts {
-                font-size: 15px;
+                font-size: 18px;
             }
 
             .depSem {
-                font-size: 15px;
+                font-size: 20px;
             }
 
             .descAndLink {
-                font-size: 20px;
+                font-size: 25px;
             }
 
             .header {
                 font-size: 35px;
             }
 
-            .header3, h3 {
-                font-size: 29px;
+            .header3,
+            h3 {
+                font-size: 34px;
             }
 
-            h5, .fac {
+            h5,
+            .fac {
+                font-size: 23px;
+            }
+
+            li a {
                 font-size: 18px;
             }
 
-            #pagination-container {
+            .headers {
                 font-size: 20px;
             }
         }
@@ -199,13 +216,13 @@
                         </div>
 
                         <div class="md-form">
-                            <i class="fas fa-pencil prefix grey-text"></i>
+                            <i class="fa fa-pencil-alt prefix grey-text"></i>
                             <textarea type="text" id="form8" name="Message" class="md-textarea form-control" rows="4" required data-bv-notempty-message="Required"></textarea>
                             <label data-error="wrong" data-success="right" for="form8">Your message</label>
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                        <button class="btn btn-unique" type="submit">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+                        <button class="btn btn-unique" type="submit">Send <i class="fa fa-paper-plane"></i></button>
                     </div>
                 </form>
             </div>
@@ -223,14 +240,14 @@
         }
         if (isset($_GET["code"]) && isset($_GET["desc"]) && isset($_GET["title"]) && isset($_GET["exams"]) && isset($_GET["tutorials"]) && isset($_GET["semester"]) && isset($_GET["su"]) && isset($_GET["projects"]) && isset($_GET["webcasts"])) {
             echo  '<title>' . $_GET["code"] . ' - ' . $_GET["title"] . '</title>';
-            echo '<div style="color:orangered; margin-left: 20px; margin-top:20px" class = "header">' . '<b>' . $_GET["code"] . ' - ' . $_GET["title"] . '</b>' . '</div>';
-            echo '<button class="button" style = "float: right; margin-right: 20px" onclick="window.location.href = &quot;index.php&quot;">' . "<span>Back To All Modules</span></button>";
+            echo '<div style="color:orangered; margin-left: 20px; margin-top:20px" class = "header">' . '<b>' . $_GET["code"] . ' - ' . $_GET["title"] . '</b>';
+            echo '<button class="button" style = "float: right; margin-right: 20px" onclick="window.location.href = &quot;index.php&quot;">' . "<span>Back To All Modules</span></button></div>";
             echo '<div style="color: rgb(104, 104, 104); margin-left: 20px" class = "depSem">' . $_GET["depmt"] . " | Semester " . $_GET["semester"] . '</div>';
-            echo '<br><div style = "margin-left: 20px;" class = "emojiParts">' . "<span style = 'border-radius: 25px; background: lightgreen; padding: 10px'>" . "	<i class = 'fa fa-video'></i> Webcasts " .  booleanFunc($_GET["webcasts"]) . "</span>";
-            echo "<span style = 'border-radius: 25px; background: lightblue; padding: 10px'>" . "   <i class = 'fa fa-book'></i> Exams " .  booleanFunc($_GET["exams"]) . "</span>";
-            echo "<span style = 'border-radius: 25px; background: lightsalmon; padding: 10px'>" . "   <i class = 'fa fa-comments'></i> Tutorials " . booleanFunc($_GET["tutorials"]) . "</span>";
-            echo "<span style = 'border-radius: 25px; background: lightpink; padding: 10px'>" . "   <i class = 'fa fa-users'></i> Group Projects " . booleanFunc($_GET["projects"]) . "</span>";
-            echo "<span style = 'border-radius: 25px; background: palegoldenrod; padding: 10px'>" . "   <i class = 'far fa-smile'></i> Pass/Fail Option " . booleanFunc($_GET["su"]) . '</span></div>';
+            echo '<br><div style = "margin-left: 20px;" class = "emojiParts">' . "<span style = 'border-radius: 25px; background: lightgreen; padding: 10px; display: inline-block'>" . "	<i class = 'fa fa-video'></i> Webcasts " .  booleanFunc($_GET["webcasts"]) . "</span>";
+            echo "<span style = 'border-radius: 25px; background: lightblue; padding: 10px; display: inline-block'>" . "   <i class = 'fa fa-book'></i> Exams " .  booleanFunc($_GET["exams"]) . "</span>";
+            echo "<span style = 'border-radius: 25px; background: lightsalmon; padding: 10px; display: inline-block'>" . "   <i class = 'fa fa-comments'></i> Tutorials " . booleanFunc($_GET["tutorials"]) . "</span>";
+            echo "<span style = 'border-radius: 25px; background: lightpink; padding: 10px; display: inline-block'>" . "   <i class = 'fa fa-users'></i> Group Projects " . booleanFunc($_GET["projects"]) . "</span>";
+            echo "<span style = 'border-radius: 25px; background: palegoldenrod; padding: 10px; display: inline-block'>" . "   <i class = 'far fa-smile'></i> Pass/Fail Option " . booleanFunc($_GET["su"]) . '</span></div>';
             echo '<br><div style = "margin-left: 20px; margin-right:20px;" class = "descAndLink">' . $_GET["desc"] . '</div>';
             echo '<br><div style = "margin-left: 20px; margin-right:20px;" class = "descAndLink">' . '<a href="https://nusmods.com/modules/' . $_GET['code'] . '/' . $_GET["title"] . '"' . 'target="_blank">NUSMods</a> /
         <a href="https://ivle.nus.edu.sg/v1/lms/public/list_course_public.aspx?code=' . $_GET['code'] . '&title=&lecName=&acadyear=&semester=&ModTitleExact=Y&LecNameExact=N"
@@ -288,7 +305,7 @@
                         chart1.draw(data1, options1);
                     }
                 </script>
-                <h5 style="color: black; text-align: center">Percentage of Students by Faculty</h5>
+                <h5 class="headers" style="color: black; text-align: center">Percentage of Students by Faculty</h5>
                 <div id="piechart"></div>
             </div>
 
@@ -330,7 +347,7 @@
                         chart2.draw(data2, options2);
                     }
                 </script>
-                <h5 style="color: black; text-align:center">Percentage of Students who S/U-ed this module</h5>
+                <h5 class="headers" style="color: black; text-align:center">Percentage of Students who S/U-ed this module</h5>
                 <div id="piechart1"></div>
             </div>
         </div>
@@ -385,7 +402,8 @@
                                 x: {
                                     0: {
                                         side: 'Count',
-                                        label: '1 - Not manageable at all ; 5 - Very manageable'
+                                        label: '1 - Not manageable at all ; 5 - Very manageable',
+                                        fontsize: 15
                                     } // Top x-axis.
                                 }
                             },
@@ -399,7 +417,7 @@
                         chart3.draw(data3, google.charts.Bar.convertOptions(options3));
                     };
                 </script>
-                <h5 style="color: black; text-align: center">Is the workload manageable?</h5>
+                <h5 class="headers" style="color: black; text-align: center">Is the workload manageable?</h5>
                 <div id="top_x_div"></div>
                 <br>
                 <span id="chart3avg">Average: <span style="color: maroon"><?php echo (isset($average) ? round($average, 2) : "NIL"); ?></span> out of 5</span>
@@ -469,7 +487,7 @@
                         chart4.draw(data4, google.charts.Bar.convertOptions(options4));
                     };
                 </script>
-                <h5 style="color: black; text-align:center">Is the module's content easy?</h5>
+                <h5 class="headers" style="color: black; text-align:center">Is the module's content easy?</h5>
                 <div id="top_x_div1"></div>
                 <br>
                 <span id="chart4avg">Average: <span style="color: maroon"><?php echo (isset($average) ? round($average, 2) : "NIL"); ?></span> out of 5</span>
@@ -539,7 +557,7 @@
                         chart5.draw(data5, google.charts.Bar.convertOptions(options5));
                     };
                 </script>
-                <h5 style="color: black; text-align:center">Will you recommend this module to your friends?</h5>
+                <h5 class="headers" style="color: black; text-align:center">Will you recommend this module to your friends?</h5>
                 <div id="top_x_div2"></div>
                 <br>
                 <span id="chart5avg">Average: <span style="color: maroon"><?php echo (isset($average) ? round($average, 2) : "NIL"); ?></span> out of 5</span>
@@ -549,120 +567,330 @@
     </div>
     <div id="review">
         <hr>
-        <h3 style="color: navy; text-align: left; padding-left: 10px;">Review This Module</h3>
-        <form íd="revForm" method="post">
-            <div class="tab" style="text-align: center">
-                <h3 style="color: green;"><i class='fa fa-school' style="color: black"></i> What faculty are you in?<span style="color:red"> *</span></h3>
-                <label> Faculty : </label>
-                <select name="faculty">
+        <?php
+        function getUserIpAddr()
+        {
+            if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+                //ip from share internet
+                $ip = $_SERVER['HTTP_CLIENT_IP'];
+            } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                //ip pass from proxy
+                $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            } else {
+                $ip = $_SERVER['REMOTE_ADDR'];
+            }
+            return $ip;
+        }
+
+        $query = "SELECT COUNT(*) FROM data WHERE ip_add = '" . getUserIpAddr() . "' AND `module` ='" . $modCode . "'";
+        $res = mysqli_query($conn, $query);
+        $new = false;
+        while ($row = mysqli_fetch_row($res)) {
+            if ($row[0] > 0) {
+                $new = true;
+            }
+        }
+        ?>
+        <div id="editF" style="display: none">
+            <?php
+            if (isset($_POST['faculty']) && isset($_POST['manageable']) && isset($_POST['easy']) && isset($_POST['recommend']) && isset($_POST['expected_grade'])) {
+                $fac = $_POST['faculty'];
+                $man = $_POST['manageable'];
+                $eas = $_POST['easy'];
+                $rec = $_POST['recommend'];
+                $exp = $_POST['expected_grade'];
+                $com = $_POST['comments'];
+            }
+
+            $query = "SELECT * FROM data WHERE ip_add = '" . getUserIpAddr() . "' AND `module` ='" . $modCode . "'";
+            $res = mysqli_query($conn, $query);
+            while ($row = mysqli_fetch_row($res)) {
+                $fac = $row[4];
+                $man = $row[5];
+                $eas = $row[6];
+                $rec = $row[7];
+                $exp = $row[8];
+                $com = $row[9];
+            }
+
+            if (isset($_POST['efaculty']) && isset($_POST['emanageable']) && isset($_POST['eeasy']) && isset($_POST['erecommend']) && isset($_POST['eexpected_grade'])) {
+                $fac = $_POST['efaculty'];
+                $man = $_POST['emanageable'];
+                $eas = $_POST['eeasy'];
+                $rec = $_POST['erecommend'];
+                $exp = $_POST['eexpected_grade'];
+                $com = $_POST['ecomments'];
+            }
+
+            ?>
+            <h3 style="color: navy; text-align: left; padding-left: 10px;">Edit Your Review</h3>
+            <form method="post">
+                <div class="tab" style="text-align: center">
+                    <h3 style="color: green;"><i class='fa fa-school' style="color: black"></i> What faculty are you in?<span style="color:red"> *</span></h3>
+                    <?php
+                    echo '<label> Faculty : </label>
+                <select name="efaculty">
                     <option>---Please select an option---</option>
-                    <option value="Arts and Social Sciences">Arts and Social Sciences</option>
-                    <option value="Business">Business</option>
-                    <option value="Computing">Computing</option>
-                    <option value="Design and Environment">Design and Environment</option>
-                    <option value="Engineering">Engineering</option>
-                    <option value="Music">Music</option>
-                    <option value="Nursing">Nursing</option>
-                    <option value="Science">Science</option>
-                </select>
-            </div>
-
-            <div class="tab" style="text-align: center">
-                <h3 style="color: green"><i class='fa fa-book-open' style="color: black"></i> Is the workload manageable?<span style="color:red"> *</span></h3>
-                <h5>1 - Not manageable at all ; 5 - Very manageable</h5>
-                <label> Please select an option : </label>
-                <label class="radio-inline">
-                    <input type="radio" value="1" name="manageable"> 1
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value="2" name="manageable"> 2
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value='3' name="manageable"> 3
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value='4' name="manageable"> 4
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value='5' name="manageable"> 5
-                </label>
-            </div>
-
-            <div class="tab" style="text-align: center">
-                <h3 style="color: green"><i class='fa fa-lightbulb' style="color: black"></i> Is the module's content easy?<span style="color:red"> *</span></h3>
-                <h5>1 - Very difficult ; 5 - Very easy</h5>
-                <label> Please select an option : </label>
-                <label class="radio-inline">
-                    <input type="radio" value="1" name="easy"> 1
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value="2" name="easy"> 2
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value='3' name="easy"> 3
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value='4' name="easy"> 4
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value='5' name="easy"> 5
-                </label>
-            </div>
-
-            <div class="tab" style="text-align: center">
-                <h3 style="color: green"><i class='fa fa-thumbs-up' style="color: black"></i> Will you recommend this module to your friends?<span style="color:red"> *</span></h3>
-                <h5>1 - Will not recommend ; 5 - Will definitely recommend!</h5>
-                <label> Please select an option : </label>
-                <label class="radio-inline">
-                    <input type="radio" value="1" name="recommend"> 1
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value="2" name="recommend"> 2
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value='3' name="recommend"> 3
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value='4' name="recommend"> 4
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" value='5' name="recommend"> 5
-                </label>
-            </div>
-
-            <div class="tab" style="text-align: center">
-                <h3 style="color: green"><i class='fa fa-poll' style="color: black"></i> Did you S/U this module?<span style="color:red"> *</span></h3>
-                <label> Please select an option : </label>
-                <select name="expected_grade">
-                    <option>---Please select an option---</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </div>
-
-            <div class="tab" style="text-align: center">
-                <h3 style="color: green"><i class='fa fa-comment' style="color: black"></i> Comments</h3>
-                <br>
-                <textarea class="form-control" rows="5" name="comments" placeholder="Write something here... You can include the name of your lecturer/tutor and the sem that you took this module in."></textarea><br>
-                <button type="submit" name="submit" style="margin-bottom: 30px;">Submit</button>
-            </div>
-            <br>
-            <div style="overflow:auto;">
-                <div style="text-align: center;">
-                    <i class="fa fa-chevron-left controls" id="prevBtn" onclick="nextPrev(-1)" title="Previous"></i>
-                    <i class="fa fa-chevron-right controls" style="margin-left: 10px;" id="nextBtn" onclick="nextPrev(1)" title="Next"></i>
+                    <option value="Arts and Social Sciences" ' . ($fac == 'Arts and Social Sciences' ? 'selected' : '') . '>Arts and Social Sciences</option>
+                    <option value="Business" ' . ($fac == 'Business' ? 'selected' : '') . '>Business</option>
+                    <option value="Computing" ' . ($fac == 'Computing' ? 'selected' : '') . '>Computing</option>
+                    <option value="Design and Environment" ' . ($fac == 'Design and Environment' ? 'selected' : '') . '>Design and Environment</option>
+                    <option value="Engineering" ' . ($fac == 'Engineering' ? 'selected' : '') . '>Engineering</option>
+                    <option value="Music" ' . ($fac == 'Music' ? 'selected' : '') . '>Music</option>
+                    <option value="Nursing" ' . ($fac == 'Nursing' ? 'selected' : '') . '>Nursing</option>
+                    <option value="Science" ' . ($fac == 'Science' ? 'selected' : '') . '>Science</option>
+                </select>'
+                    ?>
                 </div>
-            </div>
 
-            <div style="text-align:center;margin-top:40px;">
-                <span class="step"></span>
-                <span class="step"></span>
-                <span class="step"></span>
-                <span class="step"></span>
-                <span class="step"></span>
-                <span class="step"></span>
-            </div>
-        </form>
+                <div class="tab" style="text-align: center">
+                    <h3 style="color: green"><i class='fa fa-book-open' style="color: black"></i> Is the workload manageable?<span style="color:red"> *</span></h3>
+                    <h5>1 - Not manageable at all ; 5 - Very manageable</h5>
+                    <?php
+                    echo '<label> Please select an option : </label>
+                <label class="radio-inline">
+                    <input type="radio" value="1" name="emanageable" ' . ($man == '1' ? 'checked' : '') . '> 1
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="2" name="emanageable" ' . ($man == '2' ? 'checked' : '') . '> 2
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="3" name="emanageable" ' . ($man == '3' ? 'checked' : '') . '> 3
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="4" name="emanageable" ' . ($man == '4' ? 'checked' : '') . '> 4
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="5" name="emanageable" ' . ($man == '5' ? 'checked' : '') . '> 5
+                </label>'
+                    ?>
+                </div>
+
+                <div class="tab" style="text-align: center">
+                    <h3 style="color: green"><i class='fa fa-lightbulb' style="color: black"></i> Is the module's content easy?<span style="color:red"> *</span></h3>
+                    <h5>1 - Very difficult ; 5 - Very easy</h5>
+                    <?php
+                    echo '<label> Please select an option : </label>
+                <label class="radio-inline">
+                    <input type="radio" value="1" name="eeasy" ' . ($eas == '1' ? 'checked' : '') . '> 1
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="2" name="eeasy" ' . ($eas == '2' ? 'checked' : '') . '> 2
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="3" name="eeasy" ' . ($eas == '3' ? 'checked' : '') . '> 3
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="4" name="eeasy" ' . ($eas == '4' ? 'checked' : '') . '> 4
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="5" name="eeasy" ' . ($eas == '5' ? 'checked' : '') . '> 5
+                </label>'
+                    ?>
+                </div>
+
+                <div class="tab" style="text-align: center">
+                    <h3 style="color: green"><i class='fa fa-thumbs-up' style="color: black"></i> Will you recommend this module to your friends?<span style="color:red"> *</span></h3>
+                    <h5>1 - Will not recommend ; 5 - Will definitely recommend!</h5>
+                    <?php
+                    echo '<label> Please select an option : </label>
+                <label class="radio-inline">
+                    <input type="radio" value="1" name="erecommend" ' . ($rec == '1' ? 'checked' : '') . '> 1
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="2" name="erecommend" ' . ($rec == '2' ? 'checked' : '') . '> 2
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="3" name="erecommend" ' . ($rec == '3' ? 'checked' : '') . '> 3
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="4" name="erecommend" ' . ($rec == '4' ? 'checked' : '') . '> 4
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="5" name="erecommend" ' . ($rec == '5' ? 'checked' : '') . '> 5
+                </label>'
+                    ?>
+                </div>
+
+                <div class="tab" style="text-align: center">
+                    <h3 style="color: green"><i class='fa fa-poll' style="color: black"></i> Did you S/U this module?<span style="color:red"> *</span></h3>
+                    <?php
+                    echo '<label> Please select an option : </label>
+                <select name="eexpected_grade">
+                    <option>---Please select an option---</option>
+                    <option value="Yes" ' . ($exp == 'Yes' ? 'selected' : '') . '>Yes</option>
+                    <option value="No" ' . ($exp == 'No' ? 'selected' : '') . '>No</option>
+                </select>'
+                    ?>
+                </div>
+
+                <div class="tab" style="text-align: center">
+                    <h3 style="color: green"><i class='fa fa-comment' style="color: black"></i> Comments</h3>
+                    <br>
+                    <?php
+                    echo '<textarea class="form-control" rows="5" name="ecomments" placeholder="Write something here... You can include the name of your lecturer/tutor and the sem that you took this module in.">' . $com . '</textarea>' ?><br>
+                    <button type="submit" name="edit" style="margin-bottom: 30px;">Update</button>
+                </div>
+                <br>
+                <div style="overflow:auto;">
+                    <div style="text-align: center;">
+                        <i class="fa fa-chevron-left controls" id="prevBtn" onclick="nextPrev(-1)" title="Previous"></i>
+                        <i class="fa fa-chevron-right controls" style="margin-left: 10px;" id="nextBtn" onclick="nextPrev(1)" title="Next"></i>
+                    </div>
+                </div>
+
+                <div style="text-align:center;margin-top:40px;">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                </div>
+            </form>
+        </div>
+        <?php
+        if (isset($_POST['edit'])) {
+            $fac = $_POST['efaculty'];
+            $man = $_POST['emanageable'];
+            $eas = $_POST['eeasy'];
+            $rec = $_POST['erecommend'];
+            $exp = $_POST['eexpected_grade'];
+            $com = addslashes($_POST['ecomments']);
+            date_default_timezone_set('Asia/Singapore');
+            $pd = $postingDate = date("Y-m-d");
+            $pt = date("H:i:s");
+            $query = "UPDATE data SET faculty = '" . $fac . "', manageable = " . $man . ", easy = " . $eas . ", recommend = " . $rec . ", expected_grade = '" . $exp . "' ,comments = '" . $com . "' , postingDate = '" . $pd . "' , postingTime = '" . $pt . "' WHERE ip_add = '" . getUserIpAddr() . "' AND `module` ='" . $modCode . "'";
+            if ($conn->query($query)) {
+                echo "<script>window.setTimeout(function () {document.getElementById('refreshbtn').click();}, 3000); alert('Your review has been updated.');</script>";
+            } else {
+                echo "Error: " . $query . " 
+            " . $conn->error;
+            }
+        }
+        ?>
+
+        <div id="revF">
+            <h3 style="color: navy; text-align: left; padding-left: 10px;">Review This Module</h3>
+            <form method="post">
+                <div class="tab1" style="text-align: center">
+                    <h3 style="color: green;"><i class='fa fa-school' style="color: black"></i> What faculty are you in?<span style="color:red"> *</span></h3>
+                    <label> Faculty : </label>
+                    <select name="faculty">
+                        <option>---Please select an option---</option>
+                        <option value="Arts and Social Sciences">Arts and Social Sciences</option>
+                        <option value="Business">Business</option>
+                        <option value="Computing">Computing</option>
+                        <option value="Design and Environment">Design and Environment</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Music">Music</option>
+                        <option value="Nursing">Nursing</option>
+                        <option value="Science">Science</option>
+                    </select>
+                </div>
+
+                <div class="tab1" style="text-align: center">
+                    <h3 style="color: green"><i class='fa fa-book-open' style="color: black"></i> Is the workload manageable?<span style="color:red"> *</span></h3>
+                    <h5>1 - Not manageable at all ; 5 - Very manageable</h5>
+                    <label> Please select an option : </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="1" name="manageable"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="2" name="manageable"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value='3' name="manageable"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value='4' name="manageable"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value='5' name="manageable"> 5
+                    </label>
+                </div>
+
+                <div class="tab1" style="text-align: center">
+                    <h3 style="color: green"><i class='fa fa-lightbulb' style="color: black"></i> Is the module's content easy?<span style="color:red"> *</span></h3>
+                    <h5>1 - Very difficult ; 5 - Very easy</h5>
+                    <label> Please select an option : </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="1" name="easy"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="2" name="easy"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value='3' name="easy"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value='4' name="easy"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value='5' name="easy"> 5
+                    </label>
+                </div>
+
+                <div class="tab1" style="text-align: center">
+                    <h3 style="color: green"><i class='fa fa-thumbs-up' style="color: black"></i> Will you recommend this module to your friends?<span style="color:red"> *</span></h3>
+                    <h5>1 - Will not recommend ; 5 - Will definitely recommend!</h5>
+                    <label> Please select an option : </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="1" name="recommend"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="2" name="recommend"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value='3' name="recommend"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value='4' name="recommend"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value='5' name="recommend"> 5
+                    </label>
+                </div>
+
+                <div class="tab1" style="text-align: center">
+                    <h3 style="color: green"><i class='fa fa-poll' style="color: black"></i> Did you S/U this module?<span style="color:red"> *</span></h3>
+                    <label> Please select an option : </label>
+                    <select name="expected_grade">
+                        <option>---Please select an option---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="tab1" style="text-align: center">
+                    <h3 style="color: green"><i class='fa fa-comment' style="color: black"></i> Comments</h3>
+                    <br>
+                    <textarea class="form-control" rows="5" name="comments" placeholder="Write something here... You can include the name of your lecturer/tutor and the sem that you took this module in."></textarea><br>
+                    <button type="submit" name="submit" style="margin-bottom: 30px;">Submit</button>
+                </div>
+                <br>
+                <div style="overflow:auto;">
+                    <div style="text-align: center;">
+                        <i class="fa fa-chevron-left controls1" id="prevBtn1" onclick="nextPrev1(-1)" title="Previous"></i>
+                        <i class="fa fa-chevron-right controls1" style="margin-left: 10px;" id="nextBtn1" onclick="nextPrev1(1)" title="Next"></i>
+                    </div>
+                </div>
+
+                <div style="text-align:center;margin-top:40px;">
+                    <span class="step1"></span>
+                    <span class="step1"></span>
+                    <span class="step1"></span>
+                    <span class="step1"></span>
+                    <span class="step1"></span>
+                    <span class="step1"></span>
+                </div>
+            </form>
+        </div>
+        <script>
+            var isNew = <?php echo json_encode($new); ?>;
+            document.getElementById("revF").style.display = !isNew ? "block" : "none";
+            document.getElementById("editF").style.display = isNew ? "block" : "none";
+        </script>
         <hr>
         <?php
         if (isset($_POST['submit'])) {
@@ -673,6 +901,7 @@
                 if ($_POST['faculty'] == "---Please select an option---" || !isset($_POST['manageable']) || !isset($_POST['easy']) || !isset($_POST['recommend']) || $_POST['expected_grade'] == "---Please select an option---") {
                     echo "<script> alert('Please fill in all required fields.'); </script>";
                 } else {
+                    $ip_address = getUserIpAddr();
                     $faculty = $_POST['faculty'];
                     $manageable = $_POST['manageable'];
                     $easy = $_POST['easy'];
@@ -682,10 +911,10 @@
                     $postingDate = date("Y-m-d");
                     $postingTime = date("H:i:s");
                     $comments = addslashes($_POST['comments']); //addslashes helps to add escape backslashes to single quotes/double quotes/NULL/backslash itself in the comments
-                    $sql = "INSERT INTO data (module, postingDate, postingTime, faculty, manageable, easy, recommend, expected_grade, comments) 
-                    VALUES ('$modCode', '$postingDate', '$postingTime', '$faculty','$manageable','$easy','$recommend','$expected_grade','$comments')";
+                    $sql = "INSERT INTO data (ip_add, module, postingDate, postingTime, faculty, manageable, easy, recommend, expected_grade, comments) 
+                    VALUES ('$ip_address','$modCode', '$postingDate', '$postingTime', '$faculty','$manageable','$easy','$recommend','$expected_grade','$comments')";
                     if ($conn->query($sql)) {
-                        echo "<script>window.setTimeout(function () { document.getElementById('refreshbtn').click(); }, 3000); alert('Thank you for your comment!');</script>";
+                        echo "<script>document.getElementById('revF').style.display = 'none'; window.setTimeout(function () {document.getElementById('refreshbtn').click();}, 3000); document.getElementById('editF').style.display = 'block'; alert('Thank you for your comment!');</script>";
                     } else {
                         echo "Error: " . $sql . " 
                     " . $conn->error;
@@ -704,7 +933,7 @@
         <br>';
 
         if (mysqli_num_rows($result) == 0) {
-            echo "<span style = 'margin-left: 42%'>Be the first to review (above)!</span>";
+            echo "<div style = 'text-align: center'><span style = 'display: inline-block'>Be the first to review (above)!</span></div>";
         }
 
         $arr = array();
@@ -747,6 +976,7 @@
             $result4 = mysqli_query($conn, $query4);
             $result5 = mysqli_query($conn, $query5);
             ?>
+
             //On button click, load new data
             $("#refreshbtn").click(function() {
                 var data1 = google.visualization.arrayToDataTable([
@@ -925,7 +1155,7 @@
     </script>
     <div id="data-container"></div>
     <div style="text-align: center">
-        <div style="display:inline-block" id="pagination-container"></div>
+        <div style="display:inline-block" class='paginationjs' id="pagination-container"></div>
     </div>
     <br>
 </body>
